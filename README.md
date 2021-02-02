@@ -20,11 +20,11 @@ Or install it yourself as:
 ## Usage
 Launch the gem file while in the main MCOC_TRACKER Folder and type "./bin/start"
 
-Follow the username prompt and accept your Pokemon Quest. Type in keywords and numbers to navigate through the pokedex to view a pokemon's stats and description. You will also have the option to add a pokemon to your team. As with most Pokemon games you are allotted 6 spots to fill with any pokemon. If you attempt to exceed this number you will be asked to start over or remove a pokemon from your team. You can view your roster at any time. Once you are finished you are returned a list of the pokemon you selected. Enjoy!
+<!-- Follow the username prompt and accept your Pokemon Quest. Type in keywords and numbers to navigate through the pokedex to view a pokemon's stats and description. You will also have the option to add a pokemon to your team. As with most Pokemon games you are allotted 6 spots to fill with any pokemon. If you attempt to exceed this number you will be asked to start over or remove a pokemon from your team. You can view your roster at any time. Once you are finished you are returned a list of the pokemon you selected. Enjoy! -->
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/David-P-Molina/pokemon_pokedex. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/David-P-Molina/pokemon_pokedex/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/David-P-Molina/mcoc_tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/David-P-Molina/mcoc_tracker/blob/main/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -33,4 +33,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PokemonPokedex project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/pokemon_pokedex/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the MCOC Tracker project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/mcoc_tracker/blob/master/CODE_OF_CONDUCT.md).
