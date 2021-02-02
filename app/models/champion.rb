@@ -1,2 +1,2 @@
-class Champion < ActiveRecord::Base
+class CHAMPION < ActiveRecord::Base
 end
