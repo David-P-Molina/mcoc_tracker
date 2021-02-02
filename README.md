@@ -1,13 +1,13 @@
 # mcoc_tracker
 
-Welcome to Pokemon_Pokedex, This gem highlights the original 151 Pokemon in CLI glory!
-When you start this gem you will be greeted by PROFESSOR OAK, He will aid you as you begin your POKEMON journey. Once you tell PROF OAK your name he will grant you access to the stats and description of POKEMON located in the KANTO region. You even have an chance to build your dream team. You can do this by selecting a pokemon, learning about their abilities, then adding them to your team. Don't worry if you mess up  you will have the opportunity to restart the process. Thank you for downloading this Ruby Gem! 
+Welcome to the Unofficial Marvel Contest Of Champions Mobile Video Game Roster Tracker, This gem allows forgetful players like myself an easy way of organizing your roster without searching through the game's interface. Nothing is more annoying than exiting a quest to check your roster and see if you have the correct champion to counteract a difficult node. So use this app to highlight your favortie champs, most wanted champs, or a list of champions you need to upgrade!
+As you start this application you will be invited to login or view existing champions in the game! Thank you for using this application and may the rng gods grant you luck on your next crystal opening! 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-gem 'pokemon_pokedex'
+gem 'mcoc_tracker'
 
 And then execute:
 
@@ -15,10 +15,10 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install pokemon_pokedex
+    $ gem install mcoc_tracker
 
 ## Usage
-Launch the gem file while in the main Pokemon_Pokedex Folder and type "./bin/start"
+Launch the gem file while in the main MCOC_TRACKER Folder and type "./bin/start"
 
 Follow the username prompt and accept your Pokemon Quest. Type in keywords and numbers to navigate through the pokedex to view a pokemon's stats and description. You will also have the option to add a pokemon to your team. As with most Pokemon games you are allotted 6 spots to fill with any pokemon. If you attempt to exceed this number you will be asked to start over or remove a pokemon from your team. You can view your roster at any time. Once you are finished you are returned a list of the pokemon you selected. Enjoy!
 
