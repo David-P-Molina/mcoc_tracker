@@ -1,4 +1,4 @@
-class CreateChampions < ActiveRecord::Migration
+class CreateChampion < ActiveRecord::Migration
   def change
     create_table :champions do |t|
       t.string :name

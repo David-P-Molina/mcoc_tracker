@@ -1,4 +1,4 @@
-class CreateKlasses < ActiveRecord::Migration
+class CreateKlass < ActiveRecord::Migration
   def change
     create_table :klasses do |t|
 

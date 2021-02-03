@@ -1,4 +1,4 @@
-class KLASS < ActiveRecord::Base
-    has_many :champions
-    has_many :users, through: :champions
+class Klass < ActiveRecord::Base
+    has_many :champion
+    has_many :user, through: :champion
 end
