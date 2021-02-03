@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'nokogiri'
+gem 'open-uri'
 gem 'activerecord', '~> 5.2', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
