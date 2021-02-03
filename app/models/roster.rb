@@ -1,2 +1,2 @@
-class ROSTER < ActiveRecord::Base
+class Roster < ActiveRecord::Base
 end
