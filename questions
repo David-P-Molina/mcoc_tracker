@@ -1,0 +1,2 @@
+instead of creating a userschampion join table should i creat a roster to avoid a hasmany to many?
+users have a roster, roster belongs to user, roster has many champions, champions has many rosters(is this the same issue)
