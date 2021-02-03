@@ -2,3 +2,5 @@ instead of creating a userschampion join table should i creat a roster to avoid 
 users have a roster, roster belongs to user, roster has many champions, champions has many rosters(is this the same issue)
 
 Should i use bullet gem to deal with my large database
+
+what are some columns that need to go into the roster table(champion id, user id, etc.)
