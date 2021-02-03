@@ -1,37 +1,37 @@
 class KlassesController < ApplicationController
-
+  
   # GET: /klasses
-  get "/klasses" do
+  get "/classes" do
     erb :"/klas_ses/index.html"
   end
+  
+    # GET: /klasses/5
+    get "/classes/:id" do
+      erb :"/klasses/show.html"
+    end
 
   # # GET: /klasses/new
-  # get "/klasses/new" do
+  # get "/classes/new" do
   #   erb :"/klasses/new.html"
   # end
 
   # # POST: /klasses
-  # post "/klasses" do
+  # post "/classes" do
   #   redirect "/klasses"
   # end
 
-  # GET: /klasses/5
-  get "/klasses/:id" do
-    erb :"/klasses/show.html"
-  end
-
   # # GET: /klasses/5/edit
-  # get "/klasses/:id/edit" do
+  # get "/classes/:id/edit" do
   #   erb :"/klasses/edit.html"
   # end
 
   # # PATCH: /klasses/5
-  # patch "/klasses/:id" do
+  # patch "/classes/:id" do
   #   redirect "/klasses/:id"
   # end
 
   # # DELETE: /klasses/5/delete
-  # delete "/klasses/:id/delete" do
+  # delete "/classes/:id/delete" do
   #   redirect "/klasses"
   # end
 end

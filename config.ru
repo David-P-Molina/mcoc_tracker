@@ -5,6 +5,7 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 run ApplicationController
+use RosteRsController
 use KlassesController
 use ChampionsController
 use UsersController

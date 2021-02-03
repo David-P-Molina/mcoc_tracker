@@ -4,7 +4,11 @@ class ChampionsController < ApplicationController
   get "/champions" do
     erb :"/champions/index.html"
   end
-
+  # GET: /champions/5
+  get "/champions/:id" do
+    erb :"/champions/show.html"
+  end
+  
   # # GET: /champions/new
   # get "/champions/new" do
   #   erb :"/champions/new.html"
@@ -15,10 +19,6 @@ class ChampionsController < ApplicationController
   #   redirect "/champions"
   # end
 
-  # GET: /champions/5
-  get "/champions/:id" do
-    erb :"/champions/show.html"
-  end
 
   # # GET: /champions/5/edit
   # get "/champions/:id/edit" do
