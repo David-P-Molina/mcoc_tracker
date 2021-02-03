@@ -1,10 +1,9 @@
-class CreateChampion < ActiveRecord::Migration
+class CreateChampion < ActiveRecord::Migration[5.2]
   def change
     create_table :champions do |t|
       t.string :name
       t.string :klass
 
-      t.timestamps null: false
     end
   end
 end
