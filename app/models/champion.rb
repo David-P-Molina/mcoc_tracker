@@ -1,5 +1,5 @@
 class Champion < ActiveRecord::Base
-    belongs_to :user
-    has_many :champion_user
+    has_many :rosters
+    belongs_to :user, through: :roster
     belongs_to :klass
 end
