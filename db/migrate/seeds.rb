@@ -8,3 +8,4 @@ Klass.create("Tech", "Mutant", "Cosmic", "Many characters in the Tech class are 
 Klass.create("Combined", "All", "None", "Combined Champions possess elements of at least two Classes.")
 
 #Champion info
+Scraper.new()

@@ -1,6 +1,12 @@
 instead of creating a userschampion join table should i creat a roster to avoid a hasmany to many?
 users have a roster, roster belongs to user, roster has many champions, champions has many rosters(is this the same issue)
 
-Should i use bullet gem to deal with my large database
+Should i use bullet gem to deal with my large database wait to add once controllers are done. (speeds up the process)
 
 what are some columns that need to go into the roster table(champion id, user id, etc.)
+Connnect images through html can automate(check the images'name and champion name)<a href link="<%= champion.name %>"> load all images only in main show page if needed. 
+early stages of project drop and remigrate instead of adding migrations
+
+user authentication(bootstrap login form, sign in form)
+every input should have a label
+4 labels 4 inputs, 1 button and 1 label for submit

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_135541) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.string "klass"
-    t.boolean "favorite"
+    t.boolean "favorite" 
     t.boolean "wanted"
     t.boolean "one_star"
     t.boolean "two_star"
