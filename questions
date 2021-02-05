@@ -6,5 +6,6 @@ every input should have a label
 Friday Questions
 Do i need to use the datatype references when refering to the columns in roster or is the _id fine?
 are there any tables that need force cascade?
-How do i fix the Champion scraper thing?
 Do i need to use a avatar column for champions or should i use HTML to add the image
+
+https://stackoverflow.com/questions/4021322/belongs-to-through-associations

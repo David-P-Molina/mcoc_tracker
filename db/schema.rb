@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_135541) do
+ActiveRecord::Schema.define(version: 2021_02_03_162829) do
 
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.string "klass"
-    t.boolean "favorite" 
+    t.boolean "favorite"
     t.boolean "wanted"
     t.boolean "one_star"
     t.boolean "two_star"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2021_02_03_135541) do
     t.string "name"
     t.string "strong_against"
     t.string "weak_against"
+  end
+
+  create_table "rosters", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "champion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
