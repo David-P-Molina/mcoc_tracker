@@ -1,4 +1,4 @@
-class CreateRosters < ActiveRecord::Migration
+class CreateRosters < ActiveRecord::Migration[5.2]
   def change
     create_table :rosters do |t|
         t.integer :user_id
