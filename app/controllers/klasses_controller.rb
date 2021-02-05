@@ -2,11 +2,11 @@ class KlassesController < ApplicationController
   
   # GET: /klasses
   get "/classes" do
-    erb :"/klas_ses/index.html"
+    erb :"/klas_ses/index"
   end
   
     # GET: /klasses/5
     get "/classes/:id" do
-      erb :"/klasses/show.html"
+      erb :"/klasses/show."
     end
 end

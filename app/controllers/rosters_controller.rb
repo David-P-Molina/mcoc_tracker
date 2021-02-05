@@ -2,12 +2,12 @@ class RostersController < ApplicationController
 
   # GET: /rosters
   get "/rosters" do
-    erb :"/rosters/index.html"
+    erb :"/rosters/index"
   end
 
   # GET: /rosters/new
   get "/rosters/new" do
-    erb :"/rosters/new.html"
+    erb :"/rosters/new"
   end
 
   # POST: /rosters
@@ -17,12 +17,12 @@ class RostersController < ApplicationController
 
   # GET: /rosters/5
   get "/rosters/:id" do
-    erb :"/rosters/show.html"
+    erb :"/rosters/show"
   end
 
   # GET: /rosters/5/edit
   get "/rosters/:id/edit" do
-    erb :"/rosters/edit.html"
+    erb :"/rosters/edit"
   end
 
   # PATCH: /rosters/5
