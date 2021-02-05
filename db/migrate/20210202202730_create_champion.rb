@@ -4,6 +4,7 @@ class CreateChampion < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :date_added_to_game
       t.string :klass
+      t.avatar :string#used for image
       t.boolean :one_star, default: false#explain why 6 columns are necessary
       t.boolean :two_star, default: false
       t.boolean :three_star, default: false
@@ -13,6 +14,7 @@ class CreateChampion < ActiveRecord::Migration[5.2]
       t.boolean :favorite, default: false
       t.boolean :wanted, default: false
       t.text :notes
+      
     end
   end
 end
