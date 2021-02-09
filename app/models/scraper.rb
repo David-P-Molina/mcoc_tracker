@@ -33,5 +33,5 @@ class Scraper# < ActiveRecord::Base
         end
     end
 end
-Scraper.new.print_champions
+#Scraper.new.print_champions
 #add key values

@@ -2,9 +2,8 @@ class CreateChampion < ActiveRecord::Migration[5.2]
   def change
     create_table :champions do |t|
       t.string :name
-      t.string :date_added_to_game
+      t.string :release_date
       t.string :klass
-      t.avatar :string#used for image
       t.boolean :one_star, default: false#explain why 6 columns are necessary
       t.boolean :two_star, default: false
       t.boolean :three_star, default: false

@@ -10,30 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_162829) do
+ActiveRecord::Schema.define(version: 2021_02_09_171655) do
+
+  create_table "champion_klasses", force: :cascade do |t|
+    t.integer "champion_id"
+    t.integer "klass_id"
+  end
 
   create_table "champions", force: :cascade do |t|
     t.string "name"
+    t.string "release_date"
     t.string "klass"
-    t.boolean "favorite"
-    t.boolean "wanted"
-    t.boolean "one_star"
-    t.boolean "two_star"
-    t.boolean "three_star"
-    t.boolean "four_star"
-    t.boolean "five_star"
-    t.boolean "six_star"
-  end
-
-  create_table "champions_users", force: :cascade do |t|
-    t.integer "champion_id"
-    t.integer "user_id"
+    t.boolean "one_star", default: false
+    t.boolean "two_star", default: false
+    t.boolean "three_star", default: false
+    t.boolean "four_star", default: false
+    t.boolean "five_star", default: false
+    t.boolean "six_star", default: false
+    t.boolean "favorite", default: false
+    t.boolean "wanted", default: false
+    t.text "notes"
   end
 
   create_table "klasses", force: :cascade do |t|
     t.string "name"
-    t.string "strong_against"
-    t.string "weak_against"
+    t.string "class_bonus"
+    t.string "class_weakness"
+    t.string "description"
   end
 
   create_table "rosters", force: :cascade do |t|
