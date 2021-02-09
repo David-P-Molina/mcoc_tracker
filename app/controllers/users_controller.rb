@@ -44,24 +44,34 @@ class UsersController < ApplicationController
       redirect to "/rosters"
     else
       redirect to '/login'
-
-  # GET: /users/5
-  get "/users/:id" do
-    erb :"/users/show"
+    end
   end
-
-  # GET: /users/5/edit
-  get "/users/:id/edit" do
-    erb :"/users/edit"
+  get '/logout' do
+    if logged_in?
+      session.destroy
+      redirect to '/login'
+    else 
+      redirect to '/'
+    end
   end
+  
+  # # GET: /users/5
+  # get "/users/:id" do
+  #   erb :"/users/show"
+  # end
 
-  # PATCH: /users/5
-  patch "/users/:id" do
-    redirect "/users/:id"
-  end
+  # # GET: /users/5/edit
+  # get "/users/:id/edit" do
+  #   erb :"/users/edit"
+  # end
 
-  # DELETE: /users/5/delete
-  delete "/users/:id/delete" do
-    redirect "/users"
-  end
+  # # PATCH: /users/5
+  # patch "/users/:id" do
+  #   redirect "/users/:id"
+  # end
+
+  # # DELETE: /users/5/delete
+  # delete "/users/:id/delete" do
+  #   redirect "/users"
+  # end
 end
