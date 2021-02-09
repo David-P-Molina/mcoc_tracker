@@ -3,13 +3,13 @@ class UsersController < ApplicationController
     @user = User.find_by_slug(params [:slug])
     erb :'users/show'
   end
-  # GET: /users
-  get "/users" do
-    erb :"/users/index"
-  end
+  # # GET: /users #either find a use for this or delete
+  # get "/users" do
+  #   erb :"/users/index"
+  # end
 
   # GET: /users/new
-  get "/users/signup" do
+  get "/signup" do
     if !logged_in?
     erb :"/users/signup"
     else 
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   # POST: /users
-  post "/users/signup" do
+  post "/signup" do
     if params[:username] == "" || params[:email] == "" || params[:password] == ""
     redirect "/users/signup"
     else 
@@ -28,6 +28,22 @@ class UsersController < ApplicationController
       redirect to '/rosters/show'
     end
   end
+
+   # GET: /login
+  get '/login' do
+    if !logged_in?
+      erb :'users/login'
+    else
+      redirect to '/rosters'
+  end
+  
+  post '/login' do
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect to "/rosters"
+    else
+      redirect to '/login'
 
   # GET: /users/5
   get "/users/:id" do
