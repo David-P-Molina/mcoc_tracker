@@ -9,12 +9,23 @@ get '/user/:slug' do
 
   # GET: /users/new
   get "/users/signup" do
+    if !logged_in?
     erb :"/users/signup"
+    else 
+      redirect to "/rosters/show"
+    end
   end
 
   # POST: /users
   post "/users" do
-    redirect "/users"
+    if params[:username] == "" || params [:email] == "" || params[:password]
+    redirect "/users/signup"
+    else 
+      @user = User.new(username: params[:username, email: params[:email], password: params[:password])
+      @user.save
+      session[:user_id] = @user.id
+      redirect to '/rosters/show'
+    end
   end
 
   # GET: /users/5
