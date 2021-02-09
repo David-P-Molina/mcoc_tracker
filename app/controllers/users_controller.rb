@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-get '/user/:slug' do
-  @user = User.find_by_slug(params [:slug])
-  erb :'users/show'
+  get '/user/:slug' do
+    @user = User.find_by_slug(params [:slug])
+    erb :'users/show'
+  end
   # GET: /users
   get "/users" do
     erb :"/users/index"
@@ -17,11 +18,11 @@ get '/user/:slug' do
   end
 
   # POST: /users
-  post "/users" do
-    if params[:username] == "" || params [:email] == "" || params[:password]
+  post "/users/signup" do
+    if params[:username] == "" || params[:email] == "" || params[:password] == ""
     redirect "/users/signup"
     else 
-      @user = User.new(username: params[:username, email: params[:email], password: params[:password])
+      @user = User.new(username: params[:username], email: params[:email], password: params[:password])
       @user.save
       session[:user_id] = @user.id
       redirect to '/rosters/show'
