@@ -1,11 +1,9 @@
 
 user authentication(bootstrap login form, sign in form)
-every input should have a label
-4 labels 4 inputs, 1 button and 1 label for submit
-
-Friday Questions
-Do i need to use the datatype references when refering to the columns in roster or is the _id fine?
-are there any tables that need force cascade?
-Do i need to use a avatar column for champions or should i use HTML to add the image
-
 https://stackoverflow.com/questions/4021322/belongs-to-through-associations
+
+
+ Questions
+ Why Can't I seed Info?
+ ActiveRecord::AssociationTypeMismatch: Klass(#70328724813200) expected, got "Mutant" which is an instance of String
+How do I get sinatra flash working?
