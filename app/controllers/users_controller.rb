@@ -16,14 +16,14 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/signup" do
-    if params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:password] == params[:password_confirmation]
-     # flash[:error]="Guidelines Not Met: Please try again."
-      redirect "/signup"
-    else 
-      @user = User.new(username: params[:username], email: params[:email], password: params[:password])
-      @user.save
+    user = User.new(params['user'])
+    if user.valid?
+      user.save
       session[:user_id] = @user.id
     #  flash[:success]="Thank You for Signing Up"
+    else 
+      # flash[:error]="Guidelines Not Met: Please try again."
+       redirect "/signup"
       redirect to '/rosters/show'
     end
   end
