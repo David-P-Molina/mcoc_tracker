@@ -19,12 +19,12 @@ class UsersController < ApplicationController
     user = User.new(params['user'])
     if user.valid?
       user.save
-      session[:user_id] = @user.id
+      session[:user_id] = user.id
     #  flash[:success]="Thank You for Signing Up"
+    redirect to '/rosters/show'
     else 
       # flash[:error]="Guidelines Not Met: Please try again."
        redirect "/signup"
-      redirect to '/rosters/show'
     end
   end
 
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/login'
     else
-      redirect to '/rosters'
+      redirect to '/rosters/show'
     end
   end
 

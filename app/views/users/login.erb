@@ -4,18 +4,19 @@
 # <% elsif flash[:success] %>
 # <%= flash[:error]  %>
 <% end %>
+<% end %>
 
 <h1>Login to your account Summoner!</h1>
-<h3>You'll need to identify yourself before proceeding</h3>
+<h3>You are almost ready to track your roster!</h3>
     <div class = "form-container">
         <form method ="post" action= "/login"
         <div class ="form-group">
             <label for="">Email: </label>
-            <input type="text" name="user[email]" id="email" class="form-control" required>
+            <input type="text" name="user[email]" id="email" placeholder=" Required" class="form-control" required>
         </div>
-        <div class ="form-group"><br>
+        <div class ="form-group">
             <label for="">Password: </label>
-            <input type="password" name="user[password]" id="password" class="form-control" required>
+            <input type="password" name="user[password]" id="password" placeholder=" Required" class="form-control" required>
         </div>
         <input type="submit" id="submit" value=" Login ">
 </div>
