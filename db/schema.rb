@@ -10,17 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_171655) do
-
-  create_table "champion_klasses", force: :cascade do |t|
-    t.integer "champion_id"
-    t.integer "klass_id"
-  end
+ActiveRecord::Schema.define(version: 2021_02_03_162829) do
 
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.string "release_date"
-    t.string "klass"
+    t.integer "klass_id"
     t.boolean "one_star", default: false
     t.boolean "two_star", default: false
     t.boolean "three_star", default: false
@@ -30,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_171655) do
     t.boolean "favorite", default: false
     t.boolean "wanted", default: false
     t.text "notes"
+    t.index ["klass_id"], name: "index_champions_on_klass_id"
   end
 
   create_table "klasses", force: :cascade do |t|

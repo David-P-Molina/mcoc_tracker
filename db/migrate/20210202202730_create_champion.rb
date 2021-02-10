@@ -3,7 +3,7 @@ class CreateChampion < ActiveRecord::Migration[5.2]
     create_table :champions do |t|
       t.string :name
       t.string :release_date
-      t.string :klass
+      t.references :klass
       t.boolean :one_star, default: false#explain why 6 columns are necessary
       t.boolean :two_star, default: false
       t.boolean :three_star, default: false
