@@ -10,6 +10,7 @@ gem 'require_all'
 gem 'thin'
 gem 'shotgun'
 gem 'bcrypt'
+# gem 'sinatra-flash'
 gem 'dotenv'
 
 group :development do
