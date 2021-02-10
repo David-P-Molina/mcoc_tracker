@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  get '/user/:slug' do
-    @user = User.find_by_slug(params [:slug])
-    erb :'users/show'
-  end
+  # get '/user/:slug' do
+  #   @user = User.find_by_slug(params [:slug])
+  #   erb :'users/show'
+  # end
 
 
   # GET: /users/new
@@ -20,10 +20,10 @@ class UsersController < ApplicationController
     if user.valid?
       user.save
       session[:user_id] = user.id
-    #  flash[:success]="Thank You for Signing Up"
+      #flash[:success]="Thank You for Signing Up"
     redirect to '/rosters/show'
     else 
-      # flash[:error]="Guidelines Not Met: Please try again."
+       #flash[:error]="Guidelines Not Met: Please try again."
        redirect "/signup"
     end
   end
@@ -41,10 +41,10 @@ class UsersController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-     # flash[:success]="Successfully Logged In!"
+      #flash[:success]="Successfully Logged In!"
       redirect to "/rosters"
     else
-     # flash[:error]="Guidelines Not Met: Please try again."
+      #flash[:error]="Guidelines Not Met: Please try again."
       redirect to '/login'
     end
   end
