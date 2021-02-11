@@ -1,23 +1,21 @@
 class RostersController < ApplicationController
 
-  # GET: /rosters
+  # GET: /rosters ##Will include the information for how to find and identify your roster
   get "/rosters" do
-    if @current_user.roster.count = 0
-      redirect to '/rosters/new'
-    else
-      <>
     erb :"/rosters/index"
   end
 
-  # GET: /rosters/new
+
+  # GET: /rosters/new ##Will contain the form that will have their roster information. Will probably break down by klass type
+  #will have instructions on how to fill out the form
   get "/rosters/new" do
     erb :"/rosters/new"
   end
-
   # POST: /rosters
   post "/rosters" do
     redirect "/rosters"
   end
+
 
   # GET: /rosters/5
   get "/rosters/:id" do
