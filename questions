@@ -7,3 +7,24 @@ https://stackoverflow.com/questions/4021322/belongs-to-through-associations
  Why Can't I seed Info?
  ActiveRecord::AssociationTypeMismatch: Klass(#70328724813200) expected, got "Mutant" which is an instance of String
 How do I get sinatra flash working?
+
+/* Color Theme Swatches in Hex */
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-1-hex { color: #351B40; }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-2-hex { color: #322059; }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-3-hex { color: #F2E205; }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-4-hex { color: #F2CB05; }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-5-hex { color: #F28705; }
+
+/* Color Theme Swatches in RGBA */
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-1-rgba { color: rgba(52, 26, 63, 1); }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-2-rgba { color: rgba(50, 32, 89, 1); }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-3-rgba { color: rgba(242, 226, 4, 1); }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-4-rgba { color: rgba(242, 202, 4, 1); }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-5-rgba { color: rgba(242, 135, 4, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-1-hsla { color: hsla(281, 40, 17, 1); }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-2-hsla { color: hsla(258, 47, 23, 1); }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-3-hsla { color: hsla(56, 96, 48, 1); }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-4-hsla { color: hsla(50, 96, 48, 1); }
+.Captain-Nathan's-Journey---Mobile-Game-Android/iOS-5-hsla { color: hsla(33, 96, 48, 1); }

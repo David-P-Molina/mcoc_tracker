@@ -2,6 +2,10 @@ class RostersController < ApplicationController
 
   # GET: /rosters
   get "/rosters" do
+    if @current_user.roster.count = 0
+      redirect to '/rosters/new'
+    else
+      <>
     erb :"/rosters/index"
   end
 
