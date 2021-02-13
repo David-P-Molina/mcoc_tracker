@@ -10,18 +10,17 @@ class UsersController < ApplicationController
     if !logged_in?
     erb :"/users/signup"
     else 
-      redirect to "/rosters/show"
+      redirect to "/champions"
     end
   end
 
   # POST: /users
   post "/signup" do
-    user = User.new(params['user'])
+    user = User.create(params['user'])
     if user.valid?
-      user.save
-      session[:user_id] = user.id
+      session["user_id"] = user.id
       #flash[:success]="Thank You for Signing Up"
-    redirect to '/rosters/show'
+    redirect to "/rosters/show"
     else 
        #flash[:error]="Guidelines Not Met: Please try again."
        redirect "/signup"
@@ -31,29 +30,26 @@ class UsersController < ApplicationController
    # GET: /login
   get '/login' do
     if !logged_in?
-      erb :'users/login'
+      erb :"users/login"
     else
-      redirect to '/rosters/show'
+      redirect to '/rosters'
     end
   end
 
   post '/login' do
-    user = User.find_by(username: params[:username])
+    user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       #flash[:success]="Successfully Logged In!"
       redirect to "/rosters"
     else
-      #flash[:error]="Guidelines Not Met: Please try again."
+      #flash[:error]="Incorrect input detected, Please try again."
       redirect to '/login'
     end
   end
   get '/logout' do
-    if logged_in?
       session.destroy
       redirect to '/login'
-    else 
-      redirect to '/'
     end
   end
   
