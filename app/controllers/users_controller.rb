@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       session["user_id"] = user.id
       #flash[:success]="Thank You for Signing Up"
     redirect to "/rosters/show"
-    else 
+    else #add error message if email or username are in use
        #flash[:error]="Guidelines Not Met: Please try again."
        redirect "/signup"
     end
