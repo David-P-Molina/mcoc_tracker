@@ -37,20 +37,20 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    user = User.find_by(email: params['user'][:email])
+    #binding.pry
+    if user && user.authenticate(params['user'][:password])
       session[:user_id] = user.id
       #flash[:success]="Successfully Logged In!"
       redirect to "/rosters"
     else
       #flash[:error]="Incorrect input detected, Please try again."
-      redirect to '/login'
+      redirect to '/signup'
     end
   end
   get '/logout' do
       session.destroy
       redirect to '/login'
-    end
   end
   
   # # GET: /users/5
