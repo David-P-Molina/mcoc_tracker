@@ -4,7 +4,7 @@ science = Klass.create(name: "Science", class_bonus: "Mystic", class_weakness: "
 mystic = Klass.create(name: "Mystic", class_bonus: "Cosmic", class_weakness: "Science", description: "Characters in the Mystic class are associated in some way with mysticism or magic.")
 cosmic = Klass.create(name: "Cosmic", class_bonus: "Tech", class_weakness: "Mystic", description: "Characters in the Cosmic class are generally characters that come from space or other realms. However, some Cosmic characters were experimented on by species from outer space.")
 tech = Klass.create(name: "Tech", class_bonus: "Mutant", class_weakness: "Cosmic", description: "Many characters in the Tech class are androids. However, some Tech characters are simply connected in some way to technology.")
-combined = Klass.create(name: "Combined", class_bonus: "All", class_weakness: "None", description: "Combined champion1 = Champions possess elements of at least two Classes.")
+combined = Klass.create(name: "Combined", class_bonus: "All", class_weakness: "None", description: "Combined Champions possess elements of at least two Classes.")
 
 #Alternate seed data
 champion1 = Champion.create(name: "Storm", release_date: "December 10, 2014", klass: mutant)
@@ -136,10 +136,9 @@ champion126 = Champion.create(name: "Omega Red", release_date: "September 13, 20
 champion127 = Champion.create(name: "Venom the Duck", release_date: "October 16, 2018", klass: cosmic)
 champion128 = Champion.create(name: "Symbiote Supreme", release_date: "October 11, 2018", klass: mystic)
 champion129 = Champion.create(name: "Ægon", release_date: "November 22, 2018", klass: skill)
-champion130 = Champion.create(name: "The champion1 = Champion", release_date: "November 8, 2018", klass: cosmic)
+champion130 = Champion.create(name: "The Champion", release_date: "November 8, 2018", klass: cosmic)
 champion131 = Champion.create(name: "Darkhawk", release_date: "December 20, 2018", klass: tech)
 champion132 = Champion.create(name: "Night Thrasher", release_date: "December 6, 2018", klass: skill)
-champion133 = Champion.create(name: "Summoned Symbioid", release_date: "October 2, 2018", klass: combined)
 champion134 = Champion.create(name: "Thing", release_date: "January 10, 2019", klass: science)
 champion135 = Champion.create(name: "Diablo", release_date: "January 24, 2019", klass: mystic)
 champion136 = Champion.create(name: "Captain Marvel (Classic)", release_date: "January 8, 2015", klass: cosmic)
