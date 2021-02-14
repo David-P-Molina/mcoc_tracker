@@ -3,11 +3,12 @@
     <div class="class-item">
         <img src="/images/class images/(<%= klass.name %>).webp">
         <h3><%= klass.name %></h3>
-        <br>
         <strong>Strong Against:</strong> <%= klass.class_bonus %>
         <br> 
-        <strong>Weak Against:</strong>   <%= klass.class_weakness %>    
-        <p><%= klass.description %>
+        <strong>Weak Against:</strong>   <%= klass.class_weakness %>   
+        <p>
+        <strong>Description:</strong> 
+        <%= klass.description %>
         </p>
     </div>
 <% end %>
