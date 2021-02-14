@@ -1,14 +1,15 @@
 <h1>Class Types</h1>
-<div class="row klass-list">
-    <% @classes.each do |class| %>
-        <div class="class-item">
+<% @klasses.each do |klass| %>
+    <div class="class-item">
         <img src="/images/class images/(<%= klass.name %>).webp">
-        <h3><%= class.name %></h3>
+        <h3><%= klass.name %></h3>
         <br>
-        Strong Against: <%= class.class_bonus %> Weak Against   <%= class.class_weakness %>    
-        <p><%= class.description %>
+        <strong>Strong Against:</strong> <%= klass.class_bonus %>
+        <br> 
+        <strong>Weak Against:</strong>   <%= klass.class_weakness %>    
+        <p><%= klass.description %>
         </p>
-        </div>
-    <% end %>
+    </div>
+<% end %>
 </div>
 

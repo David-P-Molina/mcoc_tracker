@@ -2,6 +2,7 @@ class KlassesController < ApplicationController
   
   # GET: /klasses #will list each class with a description, and their class bonus/weaknesses
   get "/classes" do
+    @klasses = Klass.all.order(:id, :asc)
     erb :"/klasses/index"
   end
   
