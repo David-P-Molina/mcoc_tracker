@@ -3,7 +3,9 @@
             <% @champions.each do |champ| %>
                 <div class="col-md-2 champ-item"  no-repeat;">
                     <p><img src="/images/champions/<%= champ.name %>.webp">
-                    <%= champ.name %> - (<%= champ.release_date%>)
+                    <%= champ.name %>
+                    <br>
+                    <%= champ.release_date%>
                     <br>
                     <a href="/<%= champ.klass.id %>"><img src="/images/class images/(<%= champ.klass.name %>).webp">
                     <br>

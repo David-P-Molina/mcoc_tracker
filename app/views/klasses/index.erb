@@ -1,1 +1,14 @@
-<h1>This is the Model's index page.</h1>
+<h1>Class Types</h1>
+<div class="row klass-list">
+    <% @classes.each do |class| %>
+        <div class="class-item">
+        <img src="/images/class images/(<%= klass.name %>).webp">
+        <h3><%= class.name %></h3>
+        <br>
+        Strong Against: <%= class.class_bonus %> Weak Against   <%= class.class_weakness %>    
+        <p><%= class.description %>
+        </p>
+        </div>
+    <% end %>
+</div>
+
