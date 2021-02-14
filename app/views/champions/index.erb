@@ -1,2 +1,17 @@
 <h1>All Champions</h1>
-
+<div class="row coins-list">
+    <% if @champions.length > 0 %>
+            <% @champions.each do |champ| %>
+                <div class="col-md-2 champ-item"  no-repeat;">
+                    <p><img src="/images/champions/<%= champ.name %>.webp">
+                    <%= champ.name %> - (<%= champ.release_date%>)
+                    <br>
+                    <img src="/images/class images/(<%= champ.klass.name %>).webp">
+                    <br>
+                    <%= champ.klass.name %>
+                    </p>
+                </div>
+            <% end %>
+    <% else %>
+    <% end %>
+</div>
