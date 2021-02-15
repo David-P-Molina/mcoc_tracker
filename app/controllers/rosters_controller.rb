@@ -4,45 +4,45 @@ class RostersController < ApplicationController
   get "/roster" do
     redirect_if_not_logged_in
     
-    erb :"/rosters/instructions"
+    erb :"/roster/instructions"
   end
 
 
   # GET: /rosters/new ##Will contain the form that will have their roster information. Will probably break down by klass type
   #will have instructions on how to fill out the form
-  get "/rosters/new" do
+  get "/roster/new" do
     if logged_in?
-    erb :"/rosters/new"
+    erb :"/roster/new"
     else
       #flashwarning that they cannot use any features til they login
       redirect_if_not_logged_in
     end
   end
   # POST: /rosters
-  post "/rosters" do
+  post "/roster" do
     if logged_in?
 
-    redirect "/rosters"
+    redirect "/roster"
     end
   end
 
 
   # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
-  get "/rosters/:id" do
+  get "/roster/:id" do
     erb :"/rosters/show"
   end
   # GET: /rosters/5/edit
-  get "/rosters/:id/edit" do
+  get "/roster/:id/edit" do
     erb :"/rosters/edit"
   end
 
   # PATCH: /rosters/5
-  patch "/rosters/:id" do
-    redirect "/rosters/:id"
+  patch "/roster/:id" do
+    redirect "/roster/:id"
   end
 
   # DELETE: /rosters/5/delete
-  delete "/rosters/:id/delete" do
+  delete "/roster/:id/delete" do
     if logged_in
       @roster = Roster.find_by(params[:id])
       if @roster && owner?
