@@ -36,6 +36,15 @@ class RostersController < ApplicationController
 
   # DELETE: /rosters/5/delete
   delete "/rosters/:id/delete" do
-    redirect "/rosters"
+    if logged_in
+    @roster = Roster.find_by(params[:id])
+    if @roster && owner?
+      @roster.delete
+    else
+      #flashwarning you do not own this roster you can not delete
+    end
+    redirect to "/roster"
+  else
+    redirect "/login"
   end
 end
