@@ -20,9 +20,10 @@ class RostersController < ApplicationController
   end
   # POST: /rosters
   post "/rosters" do
-    if logged_in
+    if logged_in?
 
     redirect "/rosters"
+    end
   end
 
 
@@ -42,15 +43,16 @@ class RostersController < ApplicationController
 
   # DELETE: /rosters/5/delete
   delete "/rosters/:id/delete" do
-  if logged_in
-    @roster = Roster.find_by(params[:id])
-    if @roster && owner?
-      @roster.delete
+    if logged_in
+      @roster = Roster.find_by(params[:id])
+      if @roster && owner?
+        @roster.delete
+      else
+       #flashwarning you do not own this roster you can not delete
+      end
+      redirect to "/roster"
     else
-      #flashwarning you do not own this roster you can not delete
+      redirect_if_not_logged_in
     end
-    redirect to "/roster"
-  else
-    redirect_if_not_logged_in
   end
 end
