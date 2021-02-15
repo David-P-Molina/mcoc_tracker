@@ -4,7 +4,7 @@ class RostersController < ApplicationController
   get "/roster" do
     redirect_if_not_logged_in
     
-    erb :"/rosters/index"
+    erb :"/rosters/instructions"
   end
 
 
@@ -14,20 +14,22 @@ class RostersController < ApplicationController
     if logged_in?
     erb :"/rosters/new"
     else
+      #flashwarning that they cannot use any features til they login
       redirect_if_not_logged_in
     end
   end
   # POST: /rosters
   post "/rosters" do
+    if logged_in
+
     redirect "/rosters"
   end
 
 
-  # GET: /rosters/5
+  # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
   get "/rosters/:id" do
     erb :"/rosters/show"
   end
-
   # GET: /rosters/5/edit
   get "/rosters/:id/edit" do
     erb :"/rosters/edit"
