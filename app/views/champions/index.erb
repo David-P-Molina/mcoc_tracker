@@ -1,14 +1,12 @@
 <h1>All Champions</h1>
 <div class="row champions-list">
             <% @champions.each do |champ| %>
-                <div class="col-md-2 champ-item"  no-repeat;">
-                    <p><img src="/images/champions/<%= champ.name %>.webp">
-                    <%= champ.name %>
-                    <br>
+                <div class="col-md-2 champ-item">
+                    <p><img src="/images/champions/<%= champ.name %>.webp" style="width: 8vw">
+                    <br><h5><%= champ.name %></h5>
                     <%= champ.release_date%>
                     <br>
-                    <a href="/<%= champ.klass.id %>"><img src="/images/class images/(<%= champ.klass.name %>).webp">
-                    <br>
+                    <a href="/classes/<%= champ.klass.id %>"><img src="/images/class images/(<%= champ.klass.name %>).webp" style="width: 2vw">
                     <%= champ.klass.name %></a>
                     </p>
                 </div>
