@@ -1,9 +1,17 @@
-<strong><h1><%= @klass_id.name%> Class Champions</h1></strong>
+<strong><h1><%= @klass.name%> Class Champions</h1></strong>
+<h3><%= @klass.description%></h3><br>
+<img src="/images/class images/(<%= @klass.class_weakness %>).webp" style="width: 10vw">
+<img src="/images/arrow.png" style="width: 8vw">
+<img src="/images/class images/(<%= @klass.name %>).webp" style="width: 8vw">
+<img src="/images/arrow.png" style="width: 8vw">
+<img src="/images/class images/(<%= @klass.class_bonus %>).webp" style="width: 6vw">
+<br>
     <% @champions.each do |champ| %>
-        
-            <% if champ.klass_id == @klass_id.id %>
+            <% if champ.klass_id == @klass.id %>
+            <div>
             <img src="/images/champions/<%= champ.name %>.webp" style="width: 8vw">
             <%= champ.name %>
+            </div
             <br>
         <% end %>
     <% end %>

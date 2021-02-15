@@ -8,7 +8,7 @@ class KlassesController < ApplicationController
   
     # GET: /klasses/5 #will include all the champions from that class in order of release date(will include the name and release date)
     get "/classes/:id" do
-      @klass_id = Klass.find_by_id(params[:id])#find all champions by klass Id and send them to 
+      @klass = Klass.find_by_id(params[:id])#find all champions by klass Id and send them to 
       @champions = Champion.all
       erb :"/klasses/show"
     end
