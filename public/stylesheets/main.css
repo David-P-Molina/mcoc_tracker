@@ -10,17 +10,18 @@
     height: 100%;
     width: 100%;
   }
+  
 
   /* --- Welcome Page Styles --- */
   body {
     background-color: rgba(50, 32, 89, 1);
-    color: #333;
+    color: rgb(194, 194, 194);
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
   .wrapper {
-    background: rgb(194, 194, 194);
+    background: rgb(38, 38, 38);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -78,7 +79,8 @@
   }
 
   footer.branding {
-    border-top: 2px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-top: 2px solid rgb(125, 125, 125);
     margin-top: 20px;
     padding-top: 20px;
   }
