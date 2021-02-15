@@ -11,7 +11,11 @@ class RostersController < ApplicationController
   # GET: /rosters/new ##Will contain the form that will have their roster information. Will probably break down by klass type
   #will have instructions on how to fill out the form
   get "/rosters/new" do
+    if logged_in?
     erb :"/rosters/new"
+    else
+      redirect_if_not_logged_in
+    end
   end
   # POST: /rosters
   post "/rosters" do
@@ -36,7 +40,7 @@ class RostersController < ApplicationController
 
   # DELETE: /rosters/5/delete
   delete "/rosters/:id/delete" do
-    if logged_in
+  if logged_in
     @roster = Roster.find_by(params[:id])
     if @roster && owner?
       @roster.delete
@@ -45,6 +49,6 @@ class RostersController < ApplicationController
     end
     redirect to "/roster"
   else
-    redirect "/login"
+    redirect_if_not_logged_in
   end
 end
