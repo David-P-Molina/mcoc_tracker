@@ -1,2 +1,9 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1><%= @klass_id.name%>.</h1>
+    <% @champions.each do |champ| %>
+        <% if champ.klass_id == @klass_id %>
+            <img src="/images/champions/<%= champ.name %>.webp" style="width: 8vw">
+            <%= champ.name %>
+            <br>
+        <% end %>
+    <% end %>
 <div> <%= champion.name %> <%= champion.klass.name %> </div>
