@@ -1,8 +1,10 @@
 <h1>Class Types</h1>
 <% @klasses.each do |klass| %>
     <div class="class-item">
+    
+        <a href="/classes/<%= klass.id %>">
         <img src="/images/class images/(<%= klass.name %>).webp" style="width: 3vw">
-        <h3><%= klass.name %></h3>
+        <h3><%= klass.name %></h3></a>
         <strong>Strong Against:</strong> <%= klass.class_bonus %>
         <br> 
         <strong>Weak Against:</strong>   <%= klass.class_weakness %>   
