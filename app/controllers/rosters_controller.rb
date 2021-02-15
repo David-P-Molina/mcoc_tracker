@@ -3,6 +3,7 @@ class RostersController < ApplicationController
   # GET: /rosters ##Will include the information for how to find and identify your roster
   get "/roster" do
     redirect_if_not_logged_in
+    
     erb :"/rosters/index"
   end
 

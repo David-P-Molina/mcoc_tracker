@@ -26,6 +26,7 @@ class ApplicationController < Sinatra::Base
     end
     def owner?(roster)
       if current_user != roster.user
+      end
     end
   end
 end
