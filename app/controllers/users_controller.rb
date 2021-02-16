@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :"users/login"
     else
-      redirect to '/rosters'
+      redirect to '/roster/instructions'
     end
   end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     if user && user.authenticate(params['user'][:password])
       session[:user_id] = user.id
       #flash[:success]="Successfully Logged In!"
-      redirect to "/rosters"
+      redirect to "/roster/instructions"
     else
       #flash[:error]="Incorrect input detected, Please try again."
       redirect to '/signup'

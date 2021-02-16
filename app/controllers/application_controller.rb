@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
       redirect "/login" if !logged_in?
     end
     def owner?(roster)
-      if current_user != roster.user
+      if current_user != roster.user_id
       end
     end
   end
