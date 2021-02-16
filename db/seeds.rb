@@ -4,7 +4,6 @@ science = Klass.create(name: "Science", class_bonus: "Mystic", class_weakness: "
 mystic = Klass.create(name: "Mystic", class_bonus: "Cosmic", class_weakness: "Science", description: "Characters in the Mystic class are associated in some way with mysticism or magic.")
 cosmic = Klass.create(name: "Cosmic", class_bonus: "Tech", class_weakness: "Mystic", description: "Characters in the Cosmic class are generally characters that come from space or other realms. However, some Cosmic characters were experimented on by species from outer space.")
 tech = Klass.create(name: "Tech", class_bonus: "Mutant", class_weakness: "Cosmic", description: "Many characters in the Tech class are androids. However, some Tech characters are simply connected in some way to technology.")
-combined = Klass.create(name: "Combined", class_bonus: "All", class_weakness: "None", description: "Combined Champions possess elements of at least two Classes.")
 
 #Alternate seed data
 champion1 = Champion.create(name: "Storm", release_date: "December 10, 2014", klass: mutant)
