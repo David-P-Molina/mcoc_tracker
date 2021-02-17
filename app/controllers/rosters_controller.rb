@@ -30,18 +30,25 @@ class RostersController < ApplicationController
     else
       #flash[:error] = "Unable to add roster to database, please try again"
       redirect "/roster/new"
+    end
   end
 
 
   # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
   get "/roster/:id" do
     redirect_if_not_logged_in
-    erb :"/rosters/show"
+    
+    erb :"/roster/show"
   end
   # GET: /rosters/5/edit
   get "/roster/:id/edit" do
-    redirect_if_not_logged_in && owner?
-    erb :"/rosters/edit"
+    redirect_if_not_logged_in
+    if owner?
+      erb :"/roster/edit"
+    else
+      #flash[:error] = "You do not have permission to edit this roster!"
+        redirect to "/roster/instructions"
+    end
   end
 
   # PATCH: /rosters/5
