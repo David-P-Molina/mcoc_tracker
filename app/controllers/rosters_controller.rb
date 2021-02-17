@@ -2,14 +2,12 @@ class RostersController < ApplicationController
 
   # GET: /rosters ##Will include the information for how to find and identify your roster
   get "/roster/instructions" do
-    redirect_if_not_logged_in
-    
+    redirect_if_not_logged_in  
     erb :"/roster/instructions"
   end
 
   get "/roster" do
     redirect_if_not_logged_in
-    
     erb :"/roster/show"
   end
 
@@ -18,18 +16,14 @@ class RostersController < ApplicationController
   #will have instructions on how to fill out the form
   get "/roster/new" do
     redirect_if_not_logged_in
-    @roster = Roster.create
-    @roster.user_id = current_user.id
-    
     erb :"/roster/new"
-
   end
   # POST: /rosters
   post "/roster/new" do
-  redirect_if_not_logged_in
-
+    redirect_if_not_logged_in
+    @roster = Roster.create
+    @roster.user_id = current_user.id
     redirect "/roster"
-
   end
 
 
