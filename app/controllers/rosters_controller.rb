@@ -16,7 +16,7 @@ class RostersController < ApplicationController
   #will have instructions on how to fill out the form
   get "/roster/new" do
     redirect_if_not_logged_in
-    @champions = Champion.all
+    @champions = Champion.all.order(:name)
     erb :"/roster/new"
   end
   # POST: /rosters
@@ -37,7 +37,7 @@ class RostersController < ApplicationController
   # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
   get "/roster/:id" do
     redirect_if_not_logged_in
-    
+
     erb :"/roster/show"
   end
   # GET: /rosters/5/edit

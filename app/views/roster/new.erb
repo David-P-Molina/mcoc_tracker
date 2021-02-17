@@ -1,5 +1,6 @@
 <h1>Create Your New Roster <strong><%= current_user.username %></strong></h1>
-
+<p>To effectively fill out form<br>
+ Go to Champions tab, select filter icon, and sort champions alphabetically.</p>
 <form action= "/roster" method="POST">  
 <div class="row">
 <% @champions.each do |champ| %>
