@@ -1,6 +1,7 @@
 <h1>Class Types</h1>
+<div class="row">
 <% @klasses.each do |klass| %>
-    <div class="class-item">
+    <div class="col-lg-5 class-item">
     
         <a href="/classes/<%= klass.id %>">
         <img src="/images/class images/(<%= klass.name %>).webp" style="width: 3vw">
@@ -13,6 +14,7 @@
         <%= klass.description %>
         </p>
     </div>
-<% end %>
+    <% end %>
+    </div>
 </div>
 
