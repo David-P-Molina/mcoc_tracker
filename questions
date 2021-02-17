@@ -10,7 +10,8 @@ https://stackoverflow.com/questions/4021322/belongs-to-through-associations
  -work on post portion of roster controller
  -format class display(champions)
  -format roster display(champions and questions)
- 
+ -roster dropdown display working
+
 
 /* Color Theme Swatches in Hex */
 .Captain-Nathan's-Journey---Mobile-Game-Android/iOS-1-hex { color: #351B40; }

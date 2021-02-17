@@ -22,6 +22,7 @@ class RostersController < ApplicationController
   # POST: /rosters
   post "/roster/new" do
     redirect_if_not_logged_in
+    binding.pry
     @roster = Roster.create
     @roster.user_id = current_user.id
     redirect "/roster"
