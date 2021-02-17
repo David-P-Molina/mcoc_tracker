@@ -22,10 +22,14 @@ class RostersController < ApplicationController
   # POST: /rosters
   post "/roster/new" do
     redirect_if_not_logged_in
-    binding.pry
     @roster = Roster.create
+    if @roster.valid?
+      #flash[:suceess] = "Successfully added roster to database."
     @roster.user_id = current_user.id
     redirect "/roster"
+    else
+      #flash[:error] = "Unable to add roster to database, please try again"
+      redirect "/roster/new"
   end
 
 
