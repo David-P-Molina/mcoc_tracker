@@ -16,12 +16,12 @@ class RostersController < ApplicationController
   #will have instructions on how to fill out the form
   get "/roster/new" do
     redirect_if_not_logged_in
+    @champions = Champion.all
     erb :"/roster/new"
   end
   # POST: /rosters
   post "/roster/new" do
     redirect_if_not_logged_in
-    @champions = Champion.all
     @roster = Roster.create
     @roster.user_id = current_user.id
     redirect "/roster"

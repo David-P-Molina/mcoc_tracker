@@ -4,9 +4,13 @@ https://stackoverflow.com/questions/4021322/belongs-to-through-associations
 
 
  Questions
- Why Can't I seed Info?
- ActiveRecord::AssociationTypeMismatch: Klass(#70328724813200) expected, got "Mutant" which is an instance of String
-How do I get sinatra flash working?
+ How do I get sinatra flash working?
+
+ WHAT TO DO NEXT
+ -work on post portion of roster controller
+ -format class display(champions)
+ -format roster display(champions and questions)
+ 
 
 /* Color Theme Swatches in Hex */
 .Captain-Nathan's-Journey---Mobile-Game-Android/iOS-1-hex { color: #351B40; }

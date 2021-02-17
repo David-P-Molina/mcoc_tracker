@@ -1,33 +1,35 @@
 <h1>Make Changes to your roster</h1>
+<form action= "/roster" method="POST">  
 <% @champions.each do |champ| %>
     <p>
-                <img src="/images/champions/<%= champ.name %>.webp" style="width: 8vw"><br>
+                <img src="/images/champions/<%= champ.name %>.webp" style="width: 4vw"><br>
                 <%= champ.name %>
                 <img src="/images/class images/(<%= champ.klass.name %>).webp" style="width: 2vw">
                 </p>
-    <form action= "/roster" method="POST">  
         <div class="star-rating">
             <input type="checkbox" id="one_star" name="one_star" value="One Star">
-                <label for="One Star"> * Star </label>
+                <label for="One Star"> 1 *</label>
             <input type="checkbox" id="two_star" name="two_star" value="Two Star">
-                <label for="Two Star"> ** Star </label>
+                <label for="Two Star"> 2 *</label>
             <input type="checkbox" id="three_star" name="three_star" value="Three Star">
-                <label for="Three Star"> *** Star </label>
-            <input type="checkbox" id="four_star" name="four_star" value="Four Star">
-                <label for="Four Star"> **** Star </label>
+                <label for="Three Star"> 3 *</label>
+            <input type="checkbox" id="four_star"   name="four_star" value="Four Star">
+                <label for="Four Star"> 4 * Star</label>
             <input type="checkbox" id="five_star" name="five_star" value="Five Star">
-                <label for="Five Star"> ***** Star </label>
+                <label for="Five Star"> 5 * Star</label>
             <input type="checkbox" id="six_star" name="six_star" value="Six Star">
-                <label for="Six Star"> ****** Star </label>
+                <label for="Six Star"> 6 * Star</label>
         </div>
         <div class="favorite-wanted">
-            <input type="button" name="favorite" id="favorite" value="Favorite">
-            <input type="button" name="wanted" id="wanted" value="Wanted">
+            <input type="checkbox" name="favorite" id="favorite" value="Favorite">
+            <label for="favorite"> Favorite </label>
+            <input type="checkbox" name="wanted" id="wanted" value="Wanted">
+            <label for="Six Star"> Most Wanted </label>
         </div>
         <div class="notes">
             <input type="text" name="notes" id="notes" placeholder="Use for War, Focus on Upgrading, Bleed Immune, etc." maxlength = "255">
         </div>
+        <br>
+        <% end %>
         <input type="submit" value="Submit">
-        </div>
     </form>
-    <% end %>
