@@ -3,12 +3,11 @@
 <% @klasses.each do |klass| %>
     <div class="col-lg-5 class-item">
     
-        <a href="/classes/<%= klass.id %>">
-        <img src="/images/class images/(<%= klass.name %>).webp" style="width: 3vw">
-        <h2><%= klass.name %></h2></a>
-        <strong>Strong Against:</strong> <%= klass.class_bonus %>
-        <br> 
-        <strong>Weak Against:</strong>   <%= klass.class_weakness %>   
+        <center><a href="/classes/<%= klass.id %>">
+        <img src="/images/class images/(<%= klass.name %>).webp" style="width: 8vw">
+        <h2><%= klass.name %></h2></a></center>
+        <strong>Strong Against:</strong><br> <p><%= klass.class_bonus %></p>
+        <strong>Weak Against:</strong><br>   <p><%= klass.class_weakness %></p> 
         <p>
         <strong>Description:</strong> 
         <%= klass.description %>

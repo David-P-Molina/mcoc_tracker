@@ -5,6 +5,7 @@ mystic = Klass.create(name: "Mystic", class_bonus: "COSMIC - Many Mystic Champio
 cosmic = Klass.create(name: "Cosmic", class_bonus: "TECH - The status effects of Cosmic Champions are effective at bypassing the resistances of Tech Champions.", class_weakness: "MYSTIC - Many Mystic Champions are able to remove the status effects created by Cosmic Champions.", description: "Characters in the Cosmic class are generally characters that come from space or other realms. However, some Cosmic characters were experimented on by species from outer space.")
 tech = Klass.create(name: "Tech", class_bonus: "MUTANT - Armor and Power Drain make Tech Champions effective against the high Special Damage of Mutant Champions.", class_weakness: "COSMIC - The status effects of Cosmic Champions at bypassing the resistances of Tech Champions.", description: "Many characters in the Tech class are androids. However, some Tech characters are simply connected in some way to technology.")
 
+User.create(username: "Examplename", email:"example@domain.com", password: "password")
 #Alternate seed data
 champion1 = Champion.create(name: "Storm", release_date: "December 10, 2014", klass: mutant)
 champion2 = Champion.create(name: "Juggernaut", release_date: "December 10, 2014", klass: mystic)
