@@ -1,5 +1,4 @@
 <h1><strong><%= current_user.username %>'s</strong> current roster.</h1>
-<h2>Your Champions</h2>
 <div class="flash-messages">
     <% if flash[:error] %>
         <%= flash[:error]  %>
@@ -7,11 +6,11 @@
         <%= flash[:success]  %>
     <% end %>
 </div>
-
-
-
-
-    <a href="/roster/<%= current_user.id %>/edit">Edit Roster</a>
+        <h3>
+            <a href="/roster/new">New Roster &nbsp;&nbsp;&nbsp;&nbsp;</a>
+            <a href="/roster/<%= current_user.id %>/edit">Edit Roster</a>
+            </h3>
+<h2>Your Champions</h2>
     <form action="/roster/<%= current_user.id %>/delete" method="POST">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete Roster">
