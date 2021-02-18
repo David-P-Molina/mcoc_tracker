@@ -23,7 +23,9 @@ class RostersController < ApplicationController
   post "/roster/new" do
     redirect_if_not_logged_in
     @roster = Roster.create
+    binding.pry
     if @roster.valid?
+    binding.pry
       #flash[:suceess] = "Successfully added roster to database."
     @roster.user_id = current_user.id
     redirect "/roster"
