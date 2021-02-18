@@ -12,6 +12,7 @@
                 <div class="col-sm-6">
                     <img src="/images/champions/<%= roster.champion_name %>.webp" style="width: 8vw"><br>
                     <%= roster.champion_name %>
+                    <input type="checkbox" name="roster[champions][<%= roster.champion_name %>][wanted]" id="wanted" value=need to fix this>
                 </div>
                 
             <% end %>
