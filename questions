@@ -3,11 +3,10 @@ user authentication(bootstrap login form, sign in form)
 https://stackoverflow.com/questions/4021322/belongs-to-through-associations
 
 
- Questions
- How do I get sinatra flash working?
 
  WHAT TO DO NEXT
- -work on post portion of roster controller
--fix menu bar when logged in
- -roster dropdown display working
+ need to ensure that the new.erb only shows if they have not made a rosters
+ Have the rosters filtered out just need to format and remove logic from view page
+ work on edit form
+
 

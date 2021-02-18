@@ -5,7 +5,13 @@ class RostersController < ApplicationController
     redirect_if_not_logged_in  
     erb :"/rosters/instructions"
   end
-  
+
+  get "/rosters" do
+    redirect_if_not_logged_in
+    @rosters = Roster.all
+    erb :"/rosters/show"
+  end
+
   
   # GET: /rosters/new ##Will contain the form that will have their roster information. Will probably break down by klass type
   #will have instructions on how to fill out the form
@@ -35,7 +41,7 @@ class RostersController < ApplicationController
     end
     if current_user
       flash[:success] = "Successfully added roster to database."
-      redirect "/rosters/:id"
+      redirect "/rosters"
     else
       flash[:error] = "Unable to add roster to database, Please try again."
       redirect "/rosters/new"
@@ -46,8 +52,7 @@ class RostersController < ApplicationController
   # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
   get "/rosters/:id" do
     redirect_if_not_logged_in
-    binding.pry
-    @roster = Roster.find_by_id(params[:id])
+    @rosters = Roster.find_by_id(params[:id])
     erb :"/rosters/show"
   end
   

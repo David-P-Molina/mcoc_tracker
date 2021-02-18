@@ -6,6 +6,18 @@
         <%= flash[:success]  %>
     <% end %>
 </div>
+    <div class="row">
+        <% Roster.all.each do |roster|%>
+            <% if roster.user_id == current_user.id && roster.champion_name != nil %>
+                <div class="col-sm-6">
+                    <img src="/images/champions/<%= roster.champion_name %>.webp" style="width: 8vw"><br>
+                    <%= roster.champion_name %>
+                </div>
+                
+            <% end %>
+        <% end %>
+    </div>
+
         <h3>
             <a href="/roster/new">New Roster &nbsp;&nbsp;&nbsp;&nbsp;</a>
             <a href="/roster/<%= current_user.id %>/edit">Edit Roster</a>
