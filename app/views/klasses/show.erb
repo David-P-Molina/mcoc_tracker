@@ -1,23 +1,15 @@
 <br>
-<strong><h1><img src="/images/class images/(<%= @klass.name %>).webp" style="width: 8vw" class="col-md-4">
-<%= @klass.name%> Class Champions</h1></strong>
+<center><strong><h1><img src="/images/class images/(<%= @klass.name %>).webp" style="width: 8vw" class="col-md-4">
+<%= @klass.name%> Class Champions</h1></strong></center></h1>
 <h3><%= @klass.description%></h3><br>
     <div>
-    <center>
-        <img src="/images/class images/(<%= @klass.class_weakness %>).webp" style="width: 10vw"class="col-md-4">
-        <img src="/images/arrow.png" style="width: 8vw">
-        <img src="/images/class images/(<%= @klass.name %>).webp" style="width: 8vw" class="col-md-4">
-        <img src="/images/arrow.png" style="width: 8vw">
-        <img src="/images/class images/(<%= @klass.class_bonus %>).webp" style="width: 6vw"class="col-md-4">
-    </center>
-    </div>
 <br><div class="row">
     <% @champions.each do |champ| %>
         <% if champ.klass_id == @klass.id %>
                 <div class="col-md-3 champ-item">  
                 <center>          
-                    <img src="/images/champions/<%= champ.name %>.webp" style="width: 8vw"><br>
-                    <%= champ.name %>
+                    <img src="/images/champions/<%= champ.name %>.webp" style="width: 15vw"><br>
+                    <h3><%= champ.name %></h3>
                 </center>
                 <br>
                 </div>
