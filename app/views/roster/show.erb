@@ -1,2 +1,11 @@
 <h1><strong><%= current_user.username %>'s</strong> current roster.</h1>
 <h2>Your Champions</h2>
+
+
+
+
+    <a href="/roster/<%= @roster.id %>/edit">Edit Roster</a>
+    <form action="/roster/<%= @roster.id %>/delete" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete Roster">
+    </form>
