@@ -39,7 +39,7 @@ class RostersController < ApplicationController
         roster.save
       end
     end
-    if current_user
+    if current_user &&
       flash[:success] = "Successfully added roster to database."
       redirect "/rosters"
     else

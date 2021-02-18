@@ -2,28 +2,78 @@
 <div class="flash-messages">
     <% if flash[:error] %>
         <%= flash[:error]  %>
-    <% elsif flash[:success] %>
+        <% elsif flash[:success] %>
         <%= flash[:success]  %>
-    <% end %>
-</div>
-    <div class="row">
-        <% Roster.all.each do |roster|%>
-            <% if roster.user_id == current_user.id && roster.champion_name != nil %>
-                <div class="col-sm-6">
-                    <img src="/images/champions/<%= roster.champion_name %>.webp" style="width: 8vw"><br>
-                    <%= roster.champion_name %>
-                    <input type="checkbox" name="roster[champions][<%= roster.champion_name %>][wanted]" id="wanted" value=need to fix this>
-                </div>
-                
-            <% end %>
         <% end %>
-    </div>
+        </div>
+        <h2>Your Champions</h2>
+        <% Roster.all.each do |roster|%>
+            <div class="row">
+            <% if roster.user_id == current_user.id && roster.champion_name != nil %>
+            
+                <div class="col-lg-3"><center>
+                    <img src="/images/champions/<%= roster.champion_name %>.webp" style="width: 12vw"><br>
+                    <%= roster.champion_name %></center>
+                </div>
+                <div class="col-lg-2">
+                    <h5>1*  <% if roster.one_star == true %>
+                            <%= "Collected" %>
+                        <% else %>
+                            <%= "    --    " %>
+                        <% end %></h5>
+                    <h5>2*  <% if roster.two_star == true %>
+                            <%= "Collected" %>
+                        <% else %>
+                            <%= "    --    " %>
+                        <% end %></h5>
+                    <h5>3*  <% if roster.three_star == true %>
+                        <%= "Collected" %>
+                        <% else %>
+                        <%= "    --    " %>
+                        <% end %></h5>
+                    <h5>4* <% if roster.four_star == true %>
+                            <%= "Collected" %>
+                        <% else %>
+                            <%= "    --    " %>
+                        <% end %></h5> 
+                    <h5>5*  <% if roster.five_star == true %>
+                            <%= "Collected" %>
+                        <% else %>
+                            <%= "    --    " %>
+                        <% end %></h5>
+                    <h5>6*  <% if roster.six_star == true %>
+                            <%= "Collected" %>
+                        <% else %>
+                            <%= "    --    " %>
+                        <% end %></h5><br>
+                </div>
+                <div class="col-lg-3"><br>
+                    <h5><center>Favorite:   <% if roster.favorite == true %>
+                                    <img src="/images/favorite.webp" style="width: 3vw">
+                                <% else %>
+                                    <img src="/images/not-favorite.png" style="width: 3vw">
+                                <% end %></h5></center>
+                    <h5><center>Most Wanted:   <% if roster.favorite == true %>
+                                    <img src="/images/wanted.png" style="width: 3vw">
+                                <% else %>
+                                    <img src="/images/not-wanted.png" style="width: 3vw">
+                                <% end %>    
+                                </h5></center><br>        
+                </div>
+                <div class="col-lg-4">
+                    Additional Notes: <% if roster.notes == true %>
+                    <p><%= roster.notes %></p>
+                <% end %>
+                </div>
+            <% end %>
+            </div>
+        <% end %>
 
+        <div class="col-lg-12">
         <h3>
-            <a href="/roster/new">New Roster &nbsp;&nbsp;&nbsp;&nbsp;</a>
-            <a href="/roster/<%= current_user.id %>/edit">Edit Roster</a>
+            <a href="/rosters/new">New Roster</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/rosters/<%= current_user.id %>/edit">Edit Roster</a>
             </h3>
-<h2>Your Champions</h2>
     <form action="/roster/<%= current_user.id %>/delete" method="POST">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete Roster">
