@@ -19,11 +19,11 @@ class RostersController < ApplicationController
     redirect_if_not_logged_in
     @roster = Roster.create
     if @roster.valid?
-      #flash[:success] = "Successfully added roster to database."
+      flash[:success] = "Successfully added roster to database."
       @roster.user_id == current_user.id
       redirect "/roster"
     else
-      #flash[:error] = "Unable to add roster to database, please try again"
+      flash[:error] = "Unable to add roster to database, Please try again."
       redirect "/roster/new"
     end
   end

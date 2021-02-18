@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  # get '/user/:slug' do
-  #   @user = User.find_by_slug(params [:slug])
-  #   erb :'users/show'
-  # end
-
 
   # GET: /users/new
   get "/signup" do
@@ -19,10 +14,10 @@ class UsersController < ApplicationController
     user = User.create(params['user'])
     if user.valid?
       session["user_id"] = user.id
-      #flash[:success]="Thank You for Signing Up"
+      flash[:success] = "Thank You for Signing Up"
     redirect to "/roster/show"
     else #add error message if email or username are in use
-       #flash[:error]="Guidelines Not Met: Please try again."
+       flash[:error]="Guidelines Not Met: Please try again."
        redirect "/signup"
     end
   end
@@ -41,11 +36,11 @@ class UsersController < ApplicationController
     #binding.pry
     if user && user.authenticate(params['user'][:password])
       session[:user_id] = user.id
-      #flash[:success]="Successfully Logged In!"
+      flash[:success] = "Successfully Logged In!"
       redirect to "/roster/instructions"
     else
-      #flash[:error]="Incorrect input detected, Please try again."
-      redirect to '/signup'
+      flash[:error] = "Incorrect input detected, Please try again."
+      redirect to '/login'
     end
   end
   get '/logout' do
