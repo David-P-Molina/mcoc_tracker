@@ -17,10 +17,10 @@ class RostersController < ApplicationController
   # POST: /rosters
   post "/roster/new" do
     redirect_if_not_logged_in
-    @roster = Roster.create
-    if @roster.valid?
+    roster = Roster.create
+    if roster.valid?
       flash[:success] = "Successfully added roster to database."
-      @roster.user_id == current_user.id
+      roster.user_id == current_user.id
       redirect "/roster"
     else
       flash[:error] = "Unable to add roster to database, Please try again."
@@ -55,11 +55,11 @@ class RostersController < ApplicationController
   # DELETE: /rosters/5/delete
   delete "/roster/:id/delete" do
     redirect_if_not_logged_in
-      @roster = Roster.find_by(params[:id])
+      roster = Roster.find_by(params[:id])
       if not_the_owner?(@roster)
         redirect to "/roster/instructions"
       else
-        @roster.delete
+        roster.delete
         redirect to "/roster/new"
       end
   end

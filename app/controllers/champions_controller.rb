@@ -5,9 +5,5 @@ class ChampionsController < ApplicationController
     @champions = Champion.order(:name, :asc)
     erb :"/champions/index"
   end
-  # # GET: /champions/5
-  # get "/champions/:id" do
-  #   erb :"/champions/show"
-  # end
-  
+
 end
