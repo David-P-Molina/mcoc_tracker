@@ -57,9 +57,11 @@ class RostersController < ApplicationController
     redirect_if_not_logged_in
       roster = Roster.find_by(params[:id])
       if not_the_owner?(@roster)
+        flash[:error] = "You do not have permission to make changes to this file!"
         redirect to "/roster/instructions"
       else
         roster.delete
+        flash[:success] = "Roster has been successfully deleted!"
         redirect to "/roster/new"
       end
   end
