@@ -75,7 +75,7 @@ class RostersController < ApplicationController
   # DELETE: /rosters/5/delete
   delete "/rosters/:id/delete" do
     redirect_if_not_logged_in
-      roster = Roster.find_by(params[:id])
+      @roster = Roster.all
       if not_the_owner?(@roster)
         flash[:error] = "You do not have permission to make changes to this file!"
         redirect to "/rosters/instructions"
