@@ -4,8 +4,8 @@
 
 
 
-    <a href="/roster/<%= @roster.id %>/edit">Edit Roster</a>
-    <form action="/roster/<%= @roster.id %>/delete" method="POST">
+    <a href="/roster/<%= current_user.id %>/edit">Edit Roster</a>
+    <form action="/roster/<%= current_user.id %>/delete" method="POST">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete Roster">
     </form>

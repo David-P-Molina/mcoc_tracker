@@ -39,13 +39,15 @@ class RostersController < ApplicationController
   # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
   get "/roster/:id" do
     redirect_if_not_logged_in
-
+    @roster = Roster.find_by_id(params[:id])
     erb :"/roster/show"
   end
   # GET: /rosters/5/edit
   get "/roster/:id/edit" do
     redirect_if_not_logged_in
-    if owner?
+    @roster = Roster.find_by_id(params[:id])
+    if !owner?(@roster)
+      
       erb :"/roster/edit"
     else
       #flash[:error] = "You do not have permission to edit this roster!"
@@ -62,8 +64,9 @@ class RostersController < ApplicationController
   delete "/roster/:id/delete" do
     if logged_in?
       @roster = Roster.find_by(params[:id])
-      if @roster && owner?
+      if owner?(@roster)
         @roster.delete
+        redirect to "/roster/new"
       else
        #flashwarning you do not own this roster you can not delete
       end
