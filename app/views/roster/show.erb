@@ -1,5 +1,12 @@
 <h1><strong><%= current_user.username %>'s</strong> current roster.</h1>
 <h2>Your Champions</h2>
+<div class="flash-messages">
+    <% if flash[:error] %>
+        <%= flash[:error]  %>
+    <% elsif flash[:success] %>
+        <%= flash[:success]  %>
+    <% end %>
+</div>
 
 
 

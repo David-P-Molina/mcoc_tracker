@@ -1,12 +1,13 @@
-<% if false %>
-# <% if flash[:error] %>
-# <%= flash[:error]  %>
-# <% elsif flash[:success] %>
-# <%= flash[:error]  %>
-<% end %>
-<% end %>
+
 
 <h1>Create an account to access roster tracking abilities.</h1>
+<div class="flash-messages">
+    <% if flash[:error] %>
+        <%= flash[:error]  %>
+    <% elsif flash[:success] %>
+        <%= flash[:success]  %>
+    <% end %>
+</div>
     <div class = "form-container">
         <form method ="post" action= "/signup"
         <div class ="form-group">

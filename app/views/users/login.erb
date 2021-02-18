@@ -1,13 +1,14 @@
-<% if false %>
-# <% if flash[:error] %>
-# <%= flash[:error]  %>
-# <% elsif flash[:success] %>
-# <%= flash[:error]  %>
-<% end %>
-<% end %>
+
 
 <h1>Login to your account Summoner!</h1>
 <h3>You are almost ready to track your roster!</h3>
+<div class="flash-messages">
+    <% if flash[:error] %>
+        <%= flash[:error]  %>
+    <% elsif flash[:success] %>
+        <%= flash[:success]  %>
+    <% end %>
+</div>
     <div class = "form-container">
         <form method ="post" action= "/login"
         <div class ="form-group">

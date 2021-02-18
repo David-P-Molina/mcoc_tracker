@@ -1,5 +1,11 @@
 <h1>Edit Roster</h1>
-
+<div class="flash-messages">
+    <% if flash[:error] %>
+        <%= flash[:error]  %>
+    <% elsif flash[:success] %>
+        <%= flash[:success]  %>
+    <% end %>
+</div>
 <form action="roster/<%= @roster.id>" method="POST">
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 
