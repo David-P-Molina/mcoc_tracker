@@ -8,7 +8,7 @@
 </div>
 <p>Go to Champions tab, select filter icon, and sort champions alphabetically.</p>
 <div class="form-container">
- <form action= "/roster/new" method="POST">  
+ <form action= "/rosters" method="POST">  
 <div class="row">
 <% @champions.each do |champ| %>
     <center>    
@@ -19,28 +19,29 @@
                 <img src="/images/class images/(<%= champ.klass.name %>).webp" style="width: 2vw">
             </p>
             <div class="star-rating">
-            <input type="checkbox" id="one_star" name="champion[one_star]" value="One Star">
+            
+            <input type="checkbox" id="one_star" name="champions[<%= champ.name %>][one_star]" value="One Star">
             <label for="One Star"> 1 * &nbsp;&nbsp;</label>
-            <input type="checkbox" id="two_star" name="champion[two_star]" value="Two Star">
+            <input type="checkbox" id="two_star" name="roster[champions][<%= champ.name %>][two_star]" value="Two Star">
             <label for="Two Star"> 2 * &nbsp;&nbsp;</label>
-            <input type="checkbox" id="three_star" name="champion[three_star]" value="Three Star">
+            <input type="checkbox" id="three_star" name="roster[champions][<%= champ.name %>][three_star]" value="Three Star">
             <label for="Three Star"> 3 * &nbsp;&nbsp;</label><br>
-            <input type="checkbox" id="four_star"   name="champion[four_star]" value="Four Star">
+            <input type="checkbox" id="four_star"   name="roster[champions][<%= champ.name %>][four_star]" value="Four Star">
             <label for="Four Star"> 4 * &nbsp;&nbsp;</label>
-            <input type="checkbox" id="five_star" name="champion[five_star]" value="Five Star">
+            <input type="checkbox" id="five_star" name="roster[champions][<%= champ.name %>][five_star]" value="Five Star">
             <label for="Five Star"> 5 * &nbsp;&nbsp;</label>
-            <input type="checkbox" id="six_star" name="champion[six_star]" value="Six Star">
+            <input type="checkbox" id="six_star" name="roster[champions][<%= champ.name %>][six_star]" value="Six Star">
             <label for="Six Star"> 6 * &nbsp;&nbsp;</label>
             </div>
             <div class="favorite-wanted">
-            <input type="checkbox" name="champion[favorite]" id="favorite" value="Favorite">
+            <input type="checkbox" name="roster[champions][<%= champ.name %>][favorite]" id="favorite" value="Favorite">
             <label for="favorite"> Favorite &nbsp;&nbsp;</label>
-            <input type="checkbox" name="champion[wanted]" id="wanted" value="Wanted">
+            <input type="checkbox" name="roster[champions][<%= champ.name %>][wanted]" id="wanted" value="Wanted">
             <label for="Six Star"> Most Wanted </label>
             </div>
             <div class="notes">
             <label for="Notes"> Additional Notes: </label>
-            <input type="text" name="champion[notes]" id="notes" placeholder="Use for War, Bleed Immune, etc." maxlength = "255">
+            <input type="text" name="roster[champions][<%= champ.name %>][notes]" id="notes" placeholder="Use for War, Bleed Immune, etc." maxlength = "255">
             </div>
             <br>
             </div>

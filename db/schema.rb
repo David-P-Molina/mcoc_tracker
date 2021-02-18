@@ -16,15 +16,6 @@ ActiveRecord::Schema.define(version: 2021_02_03_162829) do
     t.string "name"
     t.string "release_date"
     t.integer "klass_id"
-    t.boolean "one_star", default: false
-    t.boolean "two_star", default: false
-    t.boolean "three_star", default: false
-    t.boolean "four_star", default: false
-    t.boolean "five_star", default: false
-    t.boolean "six_star", default: false
-    t.boolean "favorite", default: false
-    t.boolean "wanted", default: false
-    t.text "notes"
     t.index ["klass_id"], name: "index_champions_on_klass_id"
   end
 
@@ -38,6 +29,15 @@ ActiveRecord::Schema.define(version: 2021_02_03_162829) do
   create_table "rosters", force: :cascade do |t|
     t.integer "user_id"
     t.integer "champion_id"
+    t.boolean "one_star", default: false
+    t.boolean "two_star", default: false
+    t.boolean "three_star", default: false
+    t.boolean "four_star", default: false
+    t.boolean "five_star", default: false
+    t.boolean "six_star", default: false
+    t.boolean "favorite", default: false
+    t.boolean "wanted", default: false
+    t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

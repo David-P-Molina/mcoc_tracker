@@ -15,9 +15,18 @@ class RostersController < ApplicationController
     erb :"/roster/new"
   end
   # POST: /rosters
-  post "/roster/new" do
+  post "/rosters" do
     redirect_if_not_logged_in
-    roster = Roster.create
+    params[:roster][:champions].each do |hash|
+      if hash[1].keys.length > 1 
+#find champion by name hash[0] 
+#roster = Roster.new(champion: champion, user: current_user)
+setup notes, etc 
+roster.save
+        binding.pry
+      end
+    end
+    roster = Roster.create()
     if roster.valid?
       flash[:success] = "Successfully added roster to database."
       roster.user_id == current_user.id
