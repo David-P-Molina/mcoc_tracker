@@ -14,6 +14,10 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  error Sinatra::NotFound do
+    erb :error
+  end
+  
   helpers do
     def logged_in?
       !!current_user
