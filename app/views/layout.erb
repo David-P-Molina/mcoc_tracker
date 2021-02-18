@@ -40,7 +40,7 @@
               </li>
             <% else %>
             <li class="nav-item active">
-              <a class="nav-link" href="/roster/show"><%= current_user.username %>'s Roster</a>
+              <a class="nav-link" href="/roster/<%= current_user.id %>"><%= current_user.username %>'s Roster</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/roster/instructions">Instructions</a>

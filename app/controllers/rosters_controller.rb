@@ -5,13 +5,8 @@ class RostersController < ApplicationController
     redirect_if_not_logged_in  
     erb :"/roster/instructions"
   end
-
-  get "/roster" do#Shows current user their roster
-    redirect_if_not_logged_in
-    erb :"/roster/show"
-  end
-
-
+  
+  
   # GET: /rosters/new ##Will contain the form that will have their roster information. Will probably break down by klass type
   #will have instructions on how to fill out the form
   get "/roster/new" do
@@ -24,22 +19,23 @@ class RostersController < ApplicationController
     redirect_if_not_logged_in
     @roster = Roster.create
     if @roster.valid?
-      #flash[:suceess] = "Successfully added roster to database."
-    @roster.user_id == current_user.id
-    redirect "/roster"
+      #flash[:success] = "Successfully added roster to database."
+      @roster.user_id == current_user.id
+      redirect "/roster"
     else
       #flash[:error] = "Unable to add roster to database, please try again"
       redirect "/roster/new"
     end
   end
-
-
+  
+  
   # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
   get "/roster/:id" do
     redirect_if_not_logged_in
     @roster = Roster.find_by_id(params[:id])
     erb :"/roster/show"
   end
+  
   # GET: /rosters/5/edit
   get "/roster/:id/edit" do
     redirect_if_not_logged_in
@@ -50,12 +46,12 @@ class RostersController < ApplicationController
       erb :"/roster/edit"
     end
   end
-
+  
   # PATCH: /rosters/5
   patch "/roster/:id" do
     redirect "/roster/:id"
   end
-
+  
   # DELETE: /rosters/5/delete
   delete "/roster/:id/delete" do
     redirect_if_not_logged_in

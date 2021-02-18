@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
     end
     def not_the_owner?(roster)
       if current_user != roster.user_id
-        flash[:error] = "You do not have permission to access this page!"
+        #flash[:error] = "You do not have permission to access this page!"
       end
     end
   end
