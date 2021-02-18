@@ -19,11 +19,19 @@ class RostersController < ApplicationController
     redirect_if_not_logged_in
     params[:roster][:champions].each do |hash|
       if hash[1].keys.length > 1 
-#find champion by name hash[0] 
-#roster = Roster.new(champion: champion, user: current_user)
-setup notes, etc 
-roster.save
         binding.pry
+        champion = Champion.find_by(name: hash[0])#find champion by name hash[0] 
+        roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
+        roster.one_star = hash[1][:one_star]
+        roster.two_star = hash[1][:two_star]
+        roster.three_star = hash[1][:three_star]
+        roster.four_star = hash[1][:four_star]
+        roster.five_star = hash[1][:five_star]
+        roster.six_star =hash[1][:six_star]
+        roster.favorite = hash[1][:favorite]
+        roster.wanted = hash[1][:wanted]
+        roster.notes = hash[1][:notes]
+        roster.save
       end
     end
     roster = Roster.create()

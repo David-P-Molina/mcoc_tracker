@@ -3,6 +3,7 @@ class CreateRosters < ActiveRecord::Migration[5.2]
     create_table :rosters do |t|
         t.integer :user_id
         t.integer :champion_id
+        t.string :champion_name
         t.boolean :one_star, default: false#explain why 6 columns are necessary
         t.boolean :two_star, default: false
         t.boolean :three_star, default: false

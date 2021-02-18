@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_162829) do
   create_table "rosters", force: :cascade do |t|
     t.integer "user_id"
     t.integer "champion_id"
+    t.string "champion_name"
     t.boolean "one_star", default: false
     t.boolean "two_star", default: false
     t.boolean "three_star", default: false
