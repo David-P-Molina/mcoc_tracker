@@ -15,11 +15,10 @@ class RostersController < ApplicationController
     erb :"/roster/new"
   end
   # POST: /rosters
-  post "/rosters" do
+  post "/roster" do
     redirect_if_not_logged_in
     params[:roster][:champions].each do |hash|
       if hash[1].keys.length > 1 
-        binding.pry
         champion = Champion.find_by(name: hash[0])#find champion by name hash[0] 
         roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
         roster.one_star = hash[1][:one_star]
@@ -34,11 +33,9 @@ class RostersController < ApplicationController
         roster.save
       end
     end
-    roster = Roster.create()
-    if roster.valid?
+    if current_user
       flash[:success] = "Successfully added roster to database."
-      roster.user_id == current_user.id
-      redirect "/roster"
+      redirect "/roster/:id"
     else
       flash[:error] = "Unable to add roster to database, Please try again."
       redirect "/roster/new"
@@ -49,6 +46,7 @@ class RostersController < ApplicationController
   # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
   get "/roster/:id" do
     redirect_if_not_logged_in
+    binding.pry
     @roster = Roster.find_by_id(params[:id])
     erb :"/roster/show"
   end
