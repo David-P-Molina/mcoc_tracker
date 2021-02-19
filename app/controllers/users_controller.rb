@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if user.valid?
       session["user_id"] = user.id
       flash[:success] = "Thank You for Signing Up"
-    redirect to "/roster/show"
+    redirect to "/rosters/instructions"
     else 
        flash[:error]="Guidelines Not Met: Please try again."
        redirect "/signup"
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :"users/login"
     else
-      redirect to '/roster/instructions'
+      redirect to '/rosters/instructions'
     end
   end
 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     if user && user.authenticate(params['user'][:password])
       session[:user_id] = user.id
       flash[:success] = "Successfully Logged In!"
-      redirect to "/roster/instructions"
+      redirect to "/rosters/instructions"
     else
       flash[:error] = "Incorrect input detected, Please try again."
       redirect to '/login'

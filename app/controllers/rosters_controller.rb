@@ -24,10 +24,9 @@ class RostersController < ApplicationController
   post "/rosters" do
     redirect_if_not_logged_in
     params[:roster][:champions].each do |hash|
-      if hash[1].keys.length > 1 
+      if hash[1].keys.length > 0 
         champion = Champion.find_by(name: hash[0])#find champion by name hash[0] 
-        roster = Roster.new(champion_id: champion.id, user_id: current_user.id)
-        roster.champion_name = hash[1][:champion_name]
+        roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
         roster.one_star = hash[1][:one_star]
         roster.two_star = hash[1][:two_star]
         roster.three_star = hash[1][:three_star]
@@ -40,7 +39,7 @@ class RostersController < ApplicationController
         roster.save
       end
     end
-    if current_user &&
+    if current_user
       flash[:success] = "Successfully added roster to database."
       redirect "/rosters"
     else
@@ -60,16 +59,15 @@ class RostersController < ApplicationController
   # GET: /rosters/5/edit
   get "/rosters/:id/edit" do
     redirect_if_not_logged_in
-    @champions = Champion.all.order(:name)
     rosters = Roster.all
     if current_user
       @current_roster = rosters.collect do |roster|
         roster.user_id == current_user.id
         roster
         #collect items that are the same user_id as current_user.id
-    end
+      end
     erb :"/rosters/edit"
-  else
+    else
     redirect to "/rosters/instructions"
     end
   end

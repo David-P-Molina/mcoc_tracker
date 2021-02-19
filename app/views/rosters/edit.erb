@@ -14,7 +14,6 @@
                 <img src="/images/class images/(<%= champ.klass.name %>).webp" style="width: 2vw">
             </p>
             <div class="star-rating">
-            <% binding.pry %>
             <input type="checkbox" id="one_star" name="roster[champions][<%= champ.name %>][one_star]" value="<%= @current_rosters.one_star %>">
             <label for="One Star"> 1 * &nbsp;&nbsp;</label>
             <input type="checkbox" id="two_star" name="roster[champions][<%= champ.name %>][two_star]" value="<%= @current_rosters.two_star %>">

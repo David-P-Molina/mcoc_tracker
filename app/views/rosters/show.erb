@@ -10,7 +10,6 @@
         <% Roster.all.each do |roster|%>
             <div class="row">
             <% if roster.user_id == current_user.id && roster.champion_name != nil %>
-            
                 <div class="col-lg-3"><center>
                     <img src="/images/champions/<%= roster.champion_name %>.webp" style="width: 12vw"><br>
                     <%= roster.champion_name %></center>
