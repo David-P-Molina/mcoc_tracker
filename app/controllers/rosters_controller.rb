@@ -26,7 +26,8 @@ class RostersController < ApplicationController
     params[:roster][:champions].each do |hash|
       if hash[1].keys.length > 1 
         champion = Champion.find_by(name: hash[0])#find champion by name hash[0] 
-        roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
+        roster = Roster.new(champion_id: champion.id, user_id: current_user.id)
+        roster.champion_name = hash[1][:champion_name]
         roster.one_star = hash[1][:one_star]
         roster.two_star = hash[1][:two_star]
         roster.three_star = hash[1][:three_star]
