@@ -59,6 +59,7 @@ class RostersController < ApplicationController
   # GET: /rosters/5/edit
   get "/rosters/:id/edit" do
     redirect_if_not_logged_in
+    @champions = Champion.all.order(:name)
     rosters = Roster.all
     if current_user
       @current_roster = rosters.collect do |roster|
