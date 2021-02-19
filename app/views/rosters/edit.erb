@@ -1,7 +1,8 @@
 <h1>Edit Roster</h1>
 
 <div class="form-container">
-<form action="roster/<%= @roster.id>" method="POST">
+
+<form action="roster/<%= current_user.id %>/edit" method="POST">
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 <div class="row">
 <% @champions.each do |champ| %>
@@ -14,34 +15,33 @@
             </p>
             <div class="star-rating">
             
-            <input type="checkbox" id="one_star" name="roster[champions][<%= champ.name %>][one_star]" value="<%= @rosters.one_star %>">
+            <input type="checkbox" id="one_star" name="roster[champions][<%= champ.name %>][one_star]" value="<%= @current_rosters.one_star %>">
             <label for="One Star"> 1 * &nbsp;&nbsp;</label>
-            <input type="checkbox" id="two_star" name="roster[champions][<%= champ.name %>][two_star]" value="<%= @rosters.two_star %>">
+            <input type="checkbox" id="two_star" name="roster[champions][<%= champ.name %>][two_star]" value="<%= @current_rosters.two_star %>">
             <label for="Two Star"> 2 * &nbsp;&nbsp;</label>
-            <input type="checkbox" id="three_star" name="roster[champions][<%= champ.name %>][three_star]" value="<%= @rosters.three_star %>">
+            <input type="checkbox" id="three_star" name="roster[champions][<%= champ.name %>][three_star]" value="<%= @current_rosters.three_star %>">
             <label for="Three Star"> 3 * &nbsp;&nbsp;</label><br>
-            <input type="checkbox" id="four_star"   name="roster[champions][<%= champ.name %>][four_star]" value="<%= @rosters.four_star %>">
+            <input type="checkbox" id="four_star"   name="roster[champions][<%= champ.name %>][four_star]" value="<%= @current_rosters.four_star %>">
             <label for="Four Star"> 4 * &nbsp;&nbsp;</label>
-            <input type="checkbox" id="five_star" name="roster[champions][<%= champ.name %>][five_star]" value="<%= @rosters.five_star %>">
+            <input type="checkbox" id="five_star" name="roster[champions][<%= champ.name %>][five_star]" value="<%= @current_rosters.five_star %>">
             <label for="Five Star"> 5 * &nbsp;&nbsp;</label>
-            <input type="checkbox" id="six_star" name="roster[champions][<%= champ.name %>][six_star]" value="<%= @rosters.six_star %>">
+            <input type="checkbox" id="six_star" name="roster[champions][<%= champ.name %>][six_star]" value="<%= @current_rosters.six_star %>">
             <label for="Six Star"> 6 * &nbsp;&nbsp;</label>
             </div>
             <div class="favorite-wanted">
-            <input type="checkbox" name="roster[champions][<%= champ.name %>][favorite]" id="favorite" value="<%= @rosters.favorite %>">
+            <input type="checkbox" name="roster[champions][<%= champ.name %>][favorite]" id="favorite" value="<%= @current_rosters.favorite %>">
             <label for="favorite"> Favorite &nbsp;&nbsp;</label>
-            <input type="checkbox" name="roster[champions][<%= champ.name %>][wanted]" id="wanted" value="<%= @rosters.wanted %>">
+            <input type="checkbox" name="roster[champions][<%= champ.name %>][wanted]" id="wanted" value="<%= @current_rosters.wanted %>">
             <label for="Six Star"> Most Wanted </label>
             </div>
             <div class="notes">
             <label for="Notes"> Additional Notes: </label>
-            <input type="text" name="roster[champions][<%= champ.name %>][notes]" value="<%= @rosters.notes %>" id="notes" maxlength = "255">
+            <input type="text" name="roster[champions][<%= champ.name %>][notes]" value="<%= @current_rosters.notes %>" id="notes" maxlength = "255">
             </div>
             <br>
             </div>
             </center>
             <% end %>
             </div>
-            <input type="submit" value="Create Roster" style="width: 10vw; height: 3vw; float: right">
             </form>
             </div>

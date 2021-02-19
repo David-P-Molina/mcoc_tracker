@@ -59,11 +59,17 @@ class RostersController < ApplicationController
   # GET: /rosters/5/edit
   get "/rosters/:id/edit" do
     redirect_if_not_logged_in
-    @roster = Roster.find_by_id(params[:id])
-    if not_the_owner?(@roster)
-      redirect to "/rosters/instructions"
-    else
-      erb :"/roster/edit"
+    @champions = Champion.all.order(:name)
+    rosters = Roster.all
+    if current_user
+      @current_roster = rosters.collect do |roster|
+        roster.user_id == current_user.id
+        roster
+        #collect items that are the same user_id as current_user.id
+    end
+    erb :"/rosters/edit"
+  else
+    redirect to "/rosters/instructions"
     end
   end
   
