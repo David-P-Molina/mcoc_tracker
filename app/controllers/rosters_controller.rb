@@ -24,7 +24,7 @@ class RostersController < ApplicationController
   post "/rosters" do
     redirect_if_not_logged_in
     params[:roster][:champions].each do |hash|
-      if hash[1].keys.length > 0 
+      if hash[1].keys.length > 1
         champion = Champion.find_by(name: hash[0])#find champion by name hash[0] 
         roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
         roster.one_star = hash[1][:one_star]

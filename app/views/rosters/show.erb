@@ -8,8 +8,10 @@
         </div>
         <h2>Your Champions</h2>
         <% Roster.all.each do |roster|%>
+ 
             <div class="row">
-            <% if roster.user_id == current_user.id && roster.champion_name != nil %>
+            <% if roster.user_id == current_user.id && roster.notes != nil %>
+                
                 <div class="col-lg-3"><center>
                     <img src="/images/champions/<%= roster.champion_name %>.webp" style="width: 12vw"><br>
                     <%= roster.champion_name %></center>
@@ -60,7 +62,7 @@
                                 </h5></center><br>        
                 </div>
                 <div class="col-lg-4">
-                    Additional Notes: <% if roster.notes == true %>
+                    Additional Notes: <% if roster.notes != "" %>
                     <p><%= roster.notes %></p>
                 <% end %>
                 </div>
