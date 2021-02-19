@@ -65,7 +65,6 @@ class RostersController < ApplicationController
       @current_roster = rosters.collect do |roster|
         roster.user_id == current_user.id
         roster
-        #collect items that are the same user_id as current_user.id
       end
     erb :"/rosters/edit"
     else
@@ -75,9 +74,10 @@ class RostersController < ApplicationController
   
   # PATCH: /rosters/5
   patch "/rosters/:id" do
+    binding.pry
     params[:roster][:champions].each do |hash|
       if hash[1].keys.length > 1
-        champion = Champion.find_by(name: hash[0])#find champion by name hash[0] 
+        champion = Champion.find_by(name: hash[0])
         roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
         roster.one_star = hash[1][:one_star]
         roster.two_star = hash[1][:two_star]

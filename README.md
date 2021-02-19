@@ -18,9 +18,8 @@ Or install it yourself as:
     $ gem install mcoc_tracker
 
 ## Usage
-Launch the gem file while in the main MCOC_TRACKER Folder and type "./bin/start"
+Launch the gem file while in the main MCOC_TRACKER Folder and type "shotgun" into the terminal
 
-<!-- Follow the username prompt and accept your Pokemon Quest. Type in keywords and numbers to navigate through the pokedex to view a pokemon's stats and description. You will also have the option to add a pokemon to your team. As with most Pokemon games you are allotted 6 spots to fill with any pokemon. If you attempt to exceed this number you will be asked to start over or remove a pokemon from your team. You can view your roster at any time. Once you are finished you are returned a list of the pokemon you selected. Enjoy! -->
 
 ## Contributing
 
