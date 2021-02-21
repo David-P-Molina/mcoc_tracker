@@ -75,7 +75,7 @@
             <a href="/rosters/new">New Roster</a> &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="/rosters/<%= current_user.id %>/edit">Edit Roster</a>
             </h3>
-    <form action="/roster/<%= current_user.id %>/delete" method="POST">
+    <form action="/rosters/<%= current_user.id %>/delete" method="POST">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete Roster">
     </form>
