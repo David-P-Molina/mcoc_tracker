@@ -1,18 +1,28 @@
 <br>
-<center><strong><h1><img src="/images/class images/(<%= @klass.name %>).webp" style="width: 8vw" class="col-md-4">
-<%= @klass.name%> Class Champions</h1></strong></center></h1>
-<h3><%= @klass.description%></h3><br>
-    <div>
-<br><div class="row">
-    <% @champions.each do |champ| %>
-        <% if champ.klass_id == @klass.id %>
+<center>
+    <strong>
+        <h1>
+            <img src="/images/class images/(<%= @klass.name %>).webp" style="width: 8vw" class="col-md-4">
+            <%= @klass.name%> Class Champions
+        </h1>
+    </strong>
+</center>
+<h3>
+    <%= @klass.description%>
+</h3><br>
+    <div class="row">
+        <% @champions.each do |champ| %>
+            <% if champ.klass_id == @klass.id %>
                 <div class="col-md-3 champ-item">  
                 <center>          
                     <img src="/images/champions/<%= champ.name %>.webp" style="width: 15vw"><br>
-                    <h3><%= champ.name %></h3>
+                    <h3>
+                        <%= champ.name %>
+                    </h3>
                 </center>
                 <br>
                 </div>
             <% end %>
         <% end %>
-        </div>
+    </div>
+

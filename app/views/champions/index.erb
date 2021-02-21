@@ -1,18 +1,18 @@
 <h1>All Champions</h1>
 <div class="row champions-list">
-            <% @champions.each do |champ| %>
-                <div class="col-md-2 champ-item">
-                <center>
-                    <p><img src="/images/champions/<%= champ.name %>.webp" style="width: 8vw">
-                    <br>
-                    <h5><%= champ.name %></h5>
-                    <%= champ.release_date%>
-                    <br>
-                    <a href="/classes/<%= champ.klass.id %>"><img src="/images/class images/(<%= champ.klass.name %>).webp" style="width: 2vw">
-                    <%= champ.klass.name %></a>
-                    </p>
-                </center>
-                </div>
-            <% end %>
+    <% @champions.each do |champ| %>
+        <div class="col-md-2 champ-item">
+        <center>
+            <p><img src="/images/champions/<%= champ.name %>.webp" style="width: 8vw">
+            <br>
+                <h5><%= champ.name %></h5>
+                <%= champ.release_date%>
+            <br>
+                <a href="/classes/<%= champ.klass.id %>"><img src="/images/class images/(<%= champ.klass.name %>).webp" style="width: 2vw">
+                <%= champ.klass.name %></a>
+            </p>
+        </center>
+        </div>
+    <% end %>
 
 </div>

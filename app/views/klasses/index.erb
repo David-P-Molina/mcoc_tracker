@@ -2,18 +2,30 @@
 <div class="row">
 <% @klasses.each do |klass| %>
     <div class="col-lg-6 class-item">
-    
-        <center><a href="/classes/<%= klass.id %>">
-        <img src="/images/class images/(<%= klass.name %>).webp" style="width: 8vw">
-        <h2><%= klass.name %></h2></a></center>
-        <strong>Strong Against:</strong><br> <p><%= klass.class_bonus %></p>
-        <strong>Weak Against:</strong><br>   <p><%= klass.class_weakness %></p> 
+        <center>
+            <a href="/classes/<%= klass.id %>">
+            <img src="/images/class images/(<%= klass.name %>).webp" style="width: 8vw">
+            <h2><%= klass.name %></h2></a>
+        </center>
+        <strong>
+            Strong Against:
+        </strong><br> 
         <p>
-        <strong>Description:</strong> 
-        <%= klass.description %>
+            <%= klass.class_bonus %>
+        </p>
+        <strong>
+            Weak Against:
+        </strong><br>   
+        <p>
+            <%= klass.class_weakness %>
+        </p> 
+        <p>
+        <strong>
+            Description:
+        </strong> 
+            <%= klass.description %>
         </p>
     </div>
-    <% end %>
-    </div>
+<% end %>
 </div>
 
