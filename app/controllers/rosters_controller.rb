@@ -103,12 +103,16 @@ class RostersController < ApplicationController
   # DELETE: /rosters/5/delete
   delete "/rosters/:id/delete" do
     redirect_if_not_logged_in
-      @roster = Roster.all
+      @rosters = Roster.all
       if not_the_owner?(@roster)
         flash[:error] = "You do not have permission to make changes to this file!"
         redirect to "/rosters/instructions"
       else
-        roster.delete
+        @rosters.each do |roster|
+          if roster.user_id == current_user.id
+            roster.destroy
+          end
+        end
         flash[:success] = "Roster has been successfully deleted!"
         redirect to "/rosters/new"
       end
