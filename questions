@@ -6,8 +6,8 @@ https://stackoverflow.com/questions/4021322/belongs-to-through-associations
 
  WHAT TO DO NEXT
  Should I make a user edit, delete route?(good to have in general)(add password confirmation is good, but confirmation means you cant change the password in the same form)
- need to ensure that the new.erb only shows if they have not made a rosters
- Have the rosters filtered out just need to format and remove logic from view page
- work on edit form
 
+ -Filter out current champions roster from additional roster
+ -fix edit button so that it does not create completely new champions
+ -add new champions in edit form
 Change show page to index
