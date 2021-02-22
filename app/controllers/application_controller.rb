@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
       redirect "/login" if !logged_in?
     end
     def not_the_owner?(roster)
-      if current_user != roster.user_id
+      if current_user.id != roster.user_id
         flash[:error] = "You do not have permission to access this page!"
       end
     end

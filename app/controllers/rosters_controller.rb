@@ -8,7 +8,7 @@ class RostersController < ApplicationController
 
   get "/rosters" do
     redirect_if_not_logged_in
-    @rosters = Roster.all
+    @rosters = current_user.rosters
     erb :"/rosters/show"
   end
 
@@ -50,22 +50,19 @@ class RostersController < ApplicationController
   
   
   # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
-  get "/rosters/:id" do
-    redirect_if_not_logged_in
-    @rosters = Roster.find_by_id(params[:id])
-    erb :"/rosters/show"
-  end
+  # get "/rosters/:id" do
+  #   redirect_if_not_logged_in
+  #   @rosters = Roster.find_by_id(params[:id])
+  #   erb :"/rosters/show"
+  # end
   
   # GET: /rosters/5/edit
   get "/rosters/:id/edit" do
     redirect_if_not_logged_in
     @champions = Champion.all.order(:name)
-    rosters = Roster.all
-    if current_user
-      @current_roster = rosters.collect do |roster|
-        roster.user_id == current_user.id
-        roster
-      end
+    @rosters = current_user.rosters
+    if @rosters && !not_the_owner?(@rosters.first)
+      
       erb :"/rosters/edit"
     else
       redirect to "/rosters/instructions"
@@ -103,17 +100,13 @@ class RostersController < ApplicationController
   # DELETE: /rosters/5/delete
   delete "/rosters/:id/delete" do
     redirect_if_not_logged_in
-      @rosters = Roster.all
+      @roster = Roster.find_by_id(params[:id])
       if not_the_owner?(@roster)
         flash[:error] = "You do not have permission to make changes to this file!"
         redirect to "/rosters/instructions"
       else
-        @rosters.each do |roster|
-          if roster.user_id == current_user.id
-            roster.destroy
-          end
-        end
-        flash[:success] = "Roster has been successfully deleted!"
+       current_user.rosters.delete_all
+        flash[:success] = "Rosters have been successfully deleted!"
         redirect to "/rosters/new"
       end
   end

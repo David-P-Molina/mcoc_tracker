@@ -5,7 +5,7 @@
         <% elsif flash[:success] %>
         <%= flash[:success]  %>
         <% end %>
-        </div>
+</div>
         <h2>Your Champions</h2>
         <% Roster.all.each do |roster|%>
  
@@ -72,8 +72,11 @@
 
         <div class="col-lg-12">
         <div class="btn-group" role="group" aria-label="Roster Options">
+        <% if !@rosters  %>
             <a href="/rosters/new" class="btn btn-secondary">New Roster</a>
+        <% else %>
             <a href="/rosters/<%= current_user.id %>/edit" class="btn btn-secondary">Edit Roster</a>
+        <% end %>
             <form action="/rosters/<%= current_user.id %>/delete" method="POST">
                 <input id="hidden" type="hidden" name="_method" value="DELETE">
                 <input type="submit" class="btn btn-secondary" value="Delete Roster">
