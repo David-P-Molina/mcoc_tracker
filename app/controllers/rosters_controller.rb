@@ -74,7 +74,6 @@ class RostersController < ApplicationController
   
   # PATCH: /rosters/5
   patch "/rosters/:id" do
-    binding.pry
     @rosters = Roster.all
     params[:roster][:champions].each do |hash|
       if hash[1].keys.length > 1

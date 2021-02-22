@@ -5,7 +5,6 @@
     <input id="hidden" type="hidden" name="_method" value="PATCH">
     <div class="row">
     <% @champions.each do |champ| %>
-        <% binding.pry %>
     <% if !@rosters.include?(champ.name) %>
         <center>    
         <div class="col-lg-9 champ-questions">
@@ -60,7 +59,7 @@
         </div>
         </center>
 
-    <% else %> #place existing answers within the value
+    <% elsif @rosters.include?(champ.name) %> #place existing answers within the value
 
            <center>    
             <div class="col-lg-9 champ-questions-answered">
