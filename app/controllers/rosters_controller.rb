@@ -66,15 +66,16 @@ class RostersController < ApplicationController
         roster.user_id == current_user.id
         roster
       end
-    erb :"/rosters/edit"
+      erb :"/rosters/edit"
     else
-    redirect to "/rosters/instructions"
+      redirect to "/rosters/instructions"
     end
   end
   
   # PATCH: /rosters/5
   patch "/rosters/:id" do
     binding.pry
+    @rosters = Roster.all
     params[:roster][:champions].each do |hash|
       if hash[1].keys.length > 1
         champion = Champion.find_by(name: hash[0])
