@@ -9,7 +9,7 @@ class RostersController < ApplicationController
   get "/rosters" do
     redirect_if_not_logged_in
     @rosters = current_user.rosters
-    erb :"/rosters/show"
+    erb :"/rosters/index"
   end
 
   
