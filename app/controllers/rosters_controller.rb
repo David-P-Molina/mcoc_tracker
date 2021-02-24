@@ -85,7 +85,6 @@ class RostersController < ApplicationController
         end
       end
   
-
   delete "/rosters/:id/delete" do
     redirect_if_not_logged_in
       @roster = Roster.find_by_id(params[:id])
