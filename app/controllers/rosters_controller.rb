@@ -7,7 +7,7 @@ class RostersController < ApplicationController
 
   get "/rosters" do
     redirect_if_not_logged_in
-    @rosters = current_user.rosters
+    @rosters = current_user.rosters.count
     erb :"/rosters/index"
   end
 

@@ -72,10 +72,10 @@
 
         <div class="col-lg-12">
         <div class="btn-group" role="group" aria-label="Roster Options">
-        <% if !@rosters  %>
-            <a href="/rosters/new" class="btn btn-secondary">New Roster</a>
+        <% if @rosters == 0  %>
+        <a href="/rosters/new" class="btn btn-secondary">New Roster</a>
         <% else %>
-            <a href="/rosters/<%= current_user.id %>/edit" class="btn btn-secondary">Edit Roster</a>
+        <a href="/rosters/<%= current_user.id %>/edit" class="btn btn-secondary">Edit Roster</a>
         <% end %>
             <form action="/rosters/<%= current_user.id %>/delete" method="POST">
                 <input id="hidden" type="hidden" name="_method" value="DELETE">
