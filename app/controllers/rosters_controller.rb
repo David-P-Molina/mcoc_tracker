@@ -62,17 +62,17 @@ class RostersController < ApplicationController
     @rosters = Roster.all
     params[:roster][:champions].each do |hash|
       if hash[1].keys.length > 1 && @rosters.find_by(champion_name: hash[0]) == true
-        rosters.find_by(champion_name: hash[0])
-        roster.one_star = hash[1][:one_star]
-        roster.two_star = hash[1][:two_star]
-        roster.three_star = hash[1][:three_star]
-        roster.four_star = hash[1][:four_star]
-        roster.five_star = hash[1][:five_star]
-        roster.six_star =hash[1][:six_star]
-        roster.favorite = hash[1][:favorite]
-        roster.wanted = hash[1][:wanted]
-        roster.notes = hash[1][:notes]
-        roster.save
+        update_roster = @rosters.find_by(champion_name: hash[0])
+        update_roster.one_star = hash[1][:one_star]
+        update_roster.two_star = hash[1][:two_star]
+        update_roster.three_star = hash[1][:three_star]
+        update_roster.four_star = hash[1][:four_star]
+        update_roster.five_star = hash[1][:five_star]
+        update_roster.six_star =hash[1][:six_star]
+        update_roster.favorite = hash[1][:favorite]
+        update_roster.wanted = hash[1][:wanted]
+        update_roster.notes = hash[1][:notes]
+        update_roster.save
       elsif hash[1].keys.length > 1 
         champion = Champion.find_by(name: hash[0])
         roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
