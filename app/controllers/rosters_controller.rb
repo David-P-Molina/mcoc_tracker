@@ -14,6 +14,7 @@ class RostersController < ApplicationController
 
   get "/rosters/new" do
     redirect_if_not_logged_in
+
     @champions = Champion.all.order(:name)
     erb :"/rosters/new"
   end
@@ -21,7 +22,6 @@ class RostersController < ApplicationController
   post "/rosters" do
     redirect_if_not_logged_in
     params[:roster][:champions].each do |hash|
-      binding.pry
       if hash[1].keys.length > 1
         champion = Champion.find_by(name: hash[0])#find champion by name hash[0] 
         roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
@@ -52,53 +52,42 @@ class RostersController < ApplicationController
     @champions = Champion.all.order(:name)
     @rosters = current_user.rosters
     if @rosters && !not_the_owner?(@rosters.first)
+      
       erb :"/rosters/edit"
     else
       redirect to "/rosters/instructions"
     end
   end
   
-  patch "/rosters/:id" do
-    @rosters = Roster.all
-    params[:roster][:champions].each do |hash|
-      if hash[1].keys.length > 1 && @rosters.find_by(champion_name: hash[0]) == true
-        update_roster = @rosters.find_by(champion_name: hash[0])
-        update_roster.one_star = hash[1][:one_star]
-        update_roster.two_star = hash[1][:two_star]
-        update_roster.three_star = hash[1][:three_star]
-        update_roster.four_star = hash[1][:four_star]
-        update_roster.five_star = hash[1][:five_star]
-        update_roster.six_star =hash[1][:six_star]
-        update_roster.favorite = hash[1][:favorite]
-        update_roster.wanted = hash[1][:wanted]
-        update_roster.notes = hash[1][:notes]
-        update_roster.save
-      elsif hash[1].keys.length > 1 
-        champion = Champion.find_by(name: hash[0])
-        roster = Roster.new(champion_id: champion.id, champion_name: champion.name, user_id: current_user.id)
-        roster.one_star = hash[1][:one_star]
-        roster.two_star = hash[1][:two_star]
-        roster.three_star = hash[1][:three_star]
-        roster.four_star = hash[1][:four_star]
-        roster.five_star = hash[1][:five_star]
-        roster.six_star =hash[1][:six_star]
-        roster.favorite = hash[1][:favorite]
-        roster.wanted = hash[1][:wanted]
-        roster.notes = hash[1][:notes]
-        roster.save
+  patch "/rosters/update" do
+    if current_user
+      params[:roster][:champions].each do |hash|
+        if hash[1].keys.length > 1 
+          champion = Champion.find_by(name: hash[0])
+          update_roster = Roster.find_or_create_by(champion: champion, user: current_user) 
+          #update_roster.update(params[:roster][:champion])
+          update_roster.one_star = hash[1][:one_star]
+          update_roster.two_star = hash[1][:two_star]
+          update_roster.three_star = hash[1][:three_star]
+          update_roster.four_star = hash[1][:four_star]
+          update_roster.five_star = hash[1][:five_star]
+          update_roster.six_star =hash[1][:six_star]
+          update_roster.favorite = hash[1][:favorite]
+          update_roster.wanted = hash[1][:wanted]
+          update_roster.notes = hash[1][:notes]
+          update_roster.save
         end
       end
-      if current_user
-        flash[:success] = "Successfully updated your roster!"
-        redirect "/rosters"
-      else
-        flash[:error] = "Unable to update roster, Please try again."
-        redirect "/rosters/:id"
-        end
+      flash[:success] = "Successfully updated your roster!"
+      redirect "/rosters"
+    else
+      flash[:error] = "Unable to update roster, Please try again."
+      redirect "/rosters/:id"
       end
-  
-  delete "/rosters/:id/delete" do
-    redirect_if_not_logged_in
+    end
+    
+    delete "/rosters/:id/delete" do
+      redirect_if_not_logged_in
       @roster = Roster.find_by_id(params[:id])
       if not_the_owner?(@roster)
         flash[:error] = "You do not have permission to make changes to this file!"

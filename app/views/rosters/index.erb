@@ -13,7 +13,7 @@
             <% if roster.user_id == current_user.id && roster.notes != nil %>
                 
                 <div class="col-lg-3"><center>
-                    <img src="/images/champions/<%= roster.champion_name %>.webp" style="width: 12vw"><br>
+                    <img src="/images/champions/<%= roster.champion.name %>.webp" style="width: 12vw"><br>
                     <%= roster.champion_name %></center>
                 </div>
                 <div class="col-lg-2">
