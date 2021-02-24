@@ -1,6 +1,5 @@
 class RostersController < ApplicationController
 
-  # GET: /rosters ##Will include the information for how to find and identify your roster
   get "/rosters/instructions" do
     redirect_if_not_logged_in  
     erb :"/rosters/instructions"
@@ -12,15 +11,13 @@ class RostersController < ApplicationController
     erb :"/rosters/index"
   end
 
-  
-  # GET: /rosters/new ##Will contain the form that will have their roster information. Will probably break down by klass type
-  #will have instructions on how to fill out the form
+
   get "/rosters/new" do
     redirect_if_not_logged_in
     @champions = Champion.all.order(:name)
     erb :"/rosters/new"
   end
-  # POST: /rosters
+
   post "/rosters" do
     redirect_if_not_logged_in
     params[:roster][:champions].each do |hash|
@@ -48,15 +45,7 @@ class RostersController < ApplicationController
     end
   end
   
-  
-  # GET: /rosters/5# shows the person their roster and allows them to make changes if need be
-  # get "/rosters/:id" do
-  #   redirect_if_not_logged_in
-  #   @rosters = Roster.find_by_id(params[:id])
-  #   erb :"/rosters/show"
-  # end
-  
-  # GET: /rosters/5/edit
+
   get "/rosters/:id/edit" do
     redirect_if_not_logged_in
     @champions = Champion.all.order(:name)
@@ -69,7 +58,6 @@ class RostersController < ApplicationController
     end
   end
   
-  # PATCH: /rosters/5
   patch "/rosters/:id" do
     @rosters = Roster.all
     params[:roster][:champions].each do |hash|
@@ -97,7 +85,7 @@ class RostersController < ApplicationController
         end
       end
   
-  # DELETE: /rosters/5/delete
+
   delete "/rosters/:id/delete" do
     redirect_if_not_logged_in
       @roster = Roster.find_by_id(params[:id])

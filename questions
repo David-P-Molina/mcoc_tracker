@@ -7,7 +7,7 @@ https://stackoverflow.com/questions/4021322/belongs-to-through-associations
  WHAT TO DO NEXT
  Should I make a user edit, delete route?(good to have in general)(add password confirmation is good, but confirmation means you cant change the password in the same form)
 
- -Filter out current champions roster from additional roster
+ -Filter out current champions roster from additional roster @rosters.where("Agent Venom")
  -fix edit button so that it does not create completely new champions
  -add new champions in edit form
 Change show page to index
