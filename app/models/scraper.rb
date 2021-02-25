@@ -1,11 +1,8 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
-#require 'sinatra/activerecord'
 
-
-#require_relative './champion.rb'
-class Scraper# < ActiveRecord::Base
+class Scraper
     def get_page
         doc = Nokogiri::HTML(URI.open("http://marvel-contestofchampions.fandom.com/wiki/List_of_Champions"))
     end
@@ -29,9 +26,6 @@ class Scraper# < ActiveRecord::Base
            release_date = champion[1]
            klass = champion[2]
            puts "Champion.create(name: '#{name}', release_date: '#{release_date}', klass: '#{klass}')" if !name.nil? && !release_date.nil? && !klass.nil? 
-           #puts new_champ
         end
     end
 end
-#Scraper.new.print_champions
-#add key values
