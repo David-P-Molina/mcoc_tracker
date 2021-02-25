@@ -65,7 +65,6 @@ class RostersController < ApplicationController
         if hash[1].keys.length > 1 
           champion = Champion.find_by(name: hash[0])
           update_roster = Roster.find_or_create_by(champion: champion, user: current_user) 
-          #update_roster.update(params[:roster][:champion])
           update_roster.one_star = hash[1][:one_star]
           update_roster.two_star = hash[1][:two_star]
           update_roster.three_star = hash[1][:three_star]
@@ -82,7 +81,7 @@ class RostersController < ApplicationController
       redirect "/rosters"
     else
       flash[:error] = "Unable to update roster, Please try again."
-      redirect "/rosters/:id"
+      redirect "/rosters/:id/edit"
       end
     end
     
