@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    has_secure_password #creates papssword password=, authenticate, password confirmation ##requires bcrypt ###password has to be present
+    has_secure_password 
     has_many :rosters, dependent: :destroy
     has_many :champions, through: :roster
     validates :password, length:{in: 8..30}, confirmation: true, on: :create
