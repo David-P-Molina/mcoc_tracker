@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
+    user_info_complete?(params)
     user = User.create(params['user'])
     if user.valid?
       session["user_id"] = user.id

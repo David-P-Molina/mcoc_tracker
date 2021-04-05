@@ -33,5 +33,10 @@ class ApplicationController < Sinatra::Base
         flash[:error] = "You do not have permission to access this page!"
       end
     end
+    def user_info_complete?(params)
+      if !params.include?(:email) && !params.include?(:username) && !params.include?(:password) && !params.include?(:password_confirmation)
+        redirect "/signup"
+      end
+    end
   end
 end

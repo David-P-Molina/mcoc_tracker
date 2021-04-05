@@ -14,7 +14,6 @@ class RostersController < ApplicationController
 
   get "/rosters/new" do
     redirect_if_not_logged_in
-
     @champions = Champion.all.order(:name)
     erb :"/rosters/new"
   end
