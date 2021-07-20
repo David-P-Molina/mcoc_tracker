@@ -1,15 +1,15 @@
-# mcoc_tracker
+# Marvel Contest Of Champions(MCOC) Roster Tracker
 
-Welcome to the Unofficial Marvel Contest Of Champions Mobile Video Game Roster Tracker, This gem allows forgetful players like myself an easy way of organizing your roster without searching through the game's interface. Nothing is more annoying than exiting a quest to check your roster and see if you have the correct champion to counteract a difficult node. So use this app to highlight your favortie champs, most wanted champs, or a list of champions you need to upgrade!
-As you start this application you will be invited to login or view existing champions in the game! Thank you for using this application and may the rng gods grant you luck on your next crystal opening! 
+Welcome to the Unofficial Marvel Contest Of Champions Mobile Video Game Roster Tracker, This gem provides forgetful players like myself an easy way of organizing your roster without searching through the game's interface. Nothing is more annoying than exiting a quest to check your roster and see if you have the correct champion to counteract a difficult node. So use this app to highlight your favorite champs, most wanted champs, or a list of champions you need to upgrade!
+As you start this application you will be invited to login or view existing champions in the game! Thank you for using this application and may the RNG gods grant you luck on your next crystal opening! 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-gem 'mcoc_tracker'
+    $ gem 'mcoc_tracker'
 
-And then execute:
+And then run this command to install required gems:
 
     $ bundle install
 
@@ -17,9 +17,23 @@ Or install it yourself as:
 
     $ gem install mcoc_tracker
 
-## Usage
-Launch the gem file while in the main MCOC_TRACKER Folder and type "shotgun" into the terminal
+## Start Application from Terminal
+Launch the gem file while in the main MCOC_TRACKER Folder
 
+### Initialize Server
+Run this command to start server
+
+    $ shotgun 
+
+Visit http://localhost:9393 in browser.
+
+## Future Updates
+
+#### Update Champion List 
+
+#### Speed Up Server Requests to Cut Down on Loading
+
+#### Create A Way To Share Roster
 
 ## Contributing
 
