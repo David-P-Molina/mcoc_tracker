@@ -211,7 +211,7 @@ champion201 = Champion.create(name: "Scarlett Witch", release_date: "June 7, 202
 champion202 = Champion.create(name: "Purgatory", release_date: "June 10, 2021", klass: mystic)
 champion203 = Champion.create(name: "The Overseer", release_date: "June 24, 2021", klass: science)
 
-# champion204 = Champion.create(name: "Hercules", release_date: "July 2021", klass: cosmic)
-# champion205 = Champion.create(name: "America Chavez", release_date: "July 24, 2021", klass: mystic)
+champion204 = Champion.create(name: "Hercules", release_date: "July 2021", klass: cosmic)
+champion205 = Champion.create(name: "America Chavez", release_date: "July 24, 2021", klass: mystic)
 # champion206 = Champion.create(name: "Peni Parker", release_date: "August 10, 2021", klass: mystic)
 # champion207 = Champion.create(name: "Spider-Man 2099", release_date: "August 24, 2021", klass: science)
